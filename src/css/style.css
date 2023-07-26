@@ -1,0 +1,32 @@
+body {
+  font-family: Roboto;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+h1 {
+  font-family: Shrikhand;
+  font-style: italic;
+  font-size: 1.875em;
+  color: #101010;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.125em;
+}
+
+p {
+  font-size: 1.125em;
+  font-weight: 300;
+}
+
+.btn {
+  font-size: 1em;
+  font-weight: 500;
+}/*# sourceMappingURL=style.css.map */
