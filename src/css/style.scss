@@ -7,16 +7,17 @@ $black-color: #101010;
 $logo-title-font-family: Shrikhand;
 $text-font-family: Roboto;
 
-$logo-size: 1.875em; // 30px
+$logo-font-size: 1.875em; // 30px
+$big-title-size: 2.5em; // 40px
 
 $section-title-font-size: 1.5em; // 24px
-$section-title-font-weight: 700;
+
+$menu-title-font-size: 1.125em; // 18px
+$menu-subtitle-font-size: 1.06em; // 17px
 
 $paragraph-font-size: 1.125em; // 18px
-$paragraph-font-weight: 300;
 
 $button-font-size: 1em; // 16px
-$button-font-weight: 500;
 
 body {
   font-family: $text-font-family;
@@ -27,16 +28,31 @@ body {
   // color: $darken-green-color;
 }
 
+@mixin darker {
+  font-weight: 500;
+}
+
+@mixin light {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: 700;
+}
+
 h1 {
   font-family: $logo-title-font-family;
   font-style: italic;
-  font-size: $logo-size;
+  font-size: $logo-font-size;
   color: $black-color;
 }
 
 h2 {
-  font-family: $section-title-font-size;
-  font-weight: $section-title-font-weight;
+  font-size: $section-title-font-size;
+}
+
+h3 {
+  font-size: $menu-title-font-size;
 }
 
 p {
@@ -47,4 +63,8 @@ p {
 .btn {
   font-size: $button-font-size;
   font-weight: $button-font-weight;
+}
+
+.big-title {
+  font-size: $big-title-size;
 }

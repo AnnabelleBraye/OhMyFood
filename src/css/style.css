@@ -2,6 +2,10 @@ body {
   font-family: Roboto;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 h1 {
   font-family: Shrikhand;
   font-style: italic;
@@ -10,8 +14,11 @@ h1 {
 }
 
 h2 {
-  font-family: 1.5em;
-  font-weight: 700;
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.125em;
 }
 
 p {

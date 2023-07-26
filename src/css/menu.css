@@ -1,1 +1,8 @@
-@import "style.css";/*# sourceMappingURL=menu.css.map */
+@import "style.css";
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.125em;
+}/*# sourceMappingURL=menu.css.map */
