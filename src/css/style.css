@@ -4,18 +4,6 @@
 /**
   Classes
 */
-.light {
-  font-weight: 300;
-}
-
-.bolder {
-  font-weight: 500;
-}
-
-.bold {
-  font-weight: 700;
-}
-
 .m-0 {
   margin: 0;
 }
@@ -34,14 +22,25 @@ body {
   font-family: Roboto;
 }
 
-h2 {
-  font-size: 1.5em;
-}
-
 h3 {
   font-size: 1.125em;
 }
 
+/**
+  Common
+*/
+.btn {
+  font-weight: 500;
+  font-size: 1em;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: #ffffff;
+  border-radius: 25px;
+  border: none;
+}
+
+/**
+  Header
+*/
 .header {
   display: flex;
   flex-direction: column;
@@ -60,22 +59,41 @@ h3 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  color: #353535;
   width: 100%;
   background-color: #EAEAEA;
-  color: #353535;
 }
 .header__location-container > .icon-container {
-  display: flex;
-  line-height: 18.75px;
   width: 12px;
   height: 16px;
+  line-height: 18.75;
+  display: flex;
   padding-right: 17px;
 }
 
-.big-title {
-  font-size: 2.5em;
+/**
+  Description
+*/
+.description {
+  text-align: center;
+  padding: 39px 0 57px 0;
 }
-
-.btn {
-  font-size: 1em;
+.description h2 {
+  width: 275px;
+  height: 68px;
+  line-height: 28.13px;
+  margin: auto;
+}
+.description .paragraph {
+  color: #353535;
+  font-weight: 300;
+  font-size: 1.125em;
+  margin: auto;
+  margin-bottom: 27px;
+  width: 315px;
+}
+.description__btn {
+  font-weight: 500;
+  width: 218px;
+  height: 50px;
 }/*# sourceMappingURL=style.css.map */
