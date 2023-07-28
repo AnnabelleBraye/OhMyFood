@@ -8,6 +8,8 @@ $btn-text-color: #ffffff;
 // $darken-green-color: #008766;
 $black-color: #101010;
 $grey-2-color: #EAEAEA;
+$grey-light-color: #F6F6F6;
+$grey-tint-2-color: #7E7E7E;
 $darken-grey-color: #353535;
 
 $logo-title-font-family: Shrikhand;
@@ -48,15 +50,15 @@ $button-font-size: 1em; // 16px ==> regular
   color: $darken-grey-color;
 }
 
-@mixin light {
+@mixin weight-light {
   font-weight: 300;
 }
 
-@mixin bolder {
+@mixin weight-bolder {
   font-weight: 500;
 }
 
-@mixin bold {
+@mixin weight-bold {
   font-weight: 700;
 }
 
@@ -91,7 +93,7 @@ h3 {
   Common
 */
 .btn {
-  @include bolder;
+  @include weight-bolder;
   font-size: $button-font-size;
   background: linear-gradient($secondary-color, $primary-color);
   color: $btn-text-color;
@@ -140,15 +142,57 @@ h3 {
   }
   .paragraph {
     @include draken-grey;
-    @include light;
+    @include weight-light;
     font-size: $paragraph-font-size;
     margin: auto;
     margin-bottom: 27px;
     width: 315px;
   }
   &__btn {
-    @include bolder;
+    @include weight-bolder;
     width: 218px;
     height: 50px;
+  }
+}
+
+/**
+  Functioning
+*/
+.functioning {
+  @include flex(column);
+  &__card {
+    @include flex(row);
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    margin: auto;
+    margin-bottom: 25px;
+    width: 322px;
+    height: 72px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    .order-container {
+      display: flex;
+      @include align-and-justify-center;
+      position: absolute;
+      top: calc(50% - 12px);
+      left: -12px;
+      background-color: $primary-color;
+      width: 24px;
+      height: 24px;
+      border: 1px solid $primary-color;
+      border-radius: 50%;
+      color: white;
+    }
+    &__icon-container {
+      margin: 0 27px 0 33px;
+      color: $grey-tint-2-color;
+    }
+    &__icon-container.active {
+      color: $primary-color;
+    }
+    &__text {
+      @include weight-bolder;
+    }
   }
 }
