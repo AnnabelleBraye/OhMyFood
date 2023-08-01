@@ -63,6 +63,11 @@ h3 {
   font-size: $menu-title-font-size;
 }
 
+a {
+  text-decoration: none;
+  color: $black-color;
+}
+
 /**
   Common
 */
@@ -70,7 +75,6 @@ h3 {
   @include weight-bolder;
   font-size: $button-font-size;
   background: linear-gradient($secondary-color, $primary-color);
-  // color: $btn-text-color;
   color: $white-color;
   border-radius: 25px;
   border: none;
@@ -106,7 +110,7 @@ h3 {
 }
 
 /**
-  Description
+  Description section
 */
 .description {
   text-align: center;
@@ -132,7 +136,7 @@ h3 {
 }
 
 /**
-  Functioning
+  Functioning section
 */
 .functioning {
   @include flex(column);
@@ -181,6 +185,9 @@ h3 {
   }
 }
 
+/**
+  Restaurants section
+*/
 .restaurants {
   @include flex(column);
   background-color: #F6F6F6;
@@ -245,6 +252,35 @@ h3 {
           }
         }
       }
+    }
+  }
+}
+
+/**
+  Footer
+*/
+.footer-container {
+  @include flex(column);
+  background-color: $darken-grey-color;
+  color: $white-color;    
+  padding: 22px 25px;
+  gap: 16px;
+  h3 {
+    font-family: $logo-title-font-family;
+    font-size: $footer-title-font-size;
+    font-style: italic;
+    font-weight: 400;
+  }
+  &__list {
+    @include flex(column);
+    gap: 7px;
+    list-style-type: none;
+    li {
+      color: $white-color;
+      @include weight-bolder;
+    }
+    .m-r {
+      margin-right: 12px;
     }
   }
 }
