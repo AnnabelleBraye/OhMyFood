@@ -28,6 +28,8 @@ $paragraph-font-size: 1.125em; // 18px
 
 $button-font-size: 1em; // 16px ==> regular
 
+$new-font-size: 0.875em; // 14px
+
 /**
   Classes
 */
@@ -203,6 +205,84 @@ h3 {
       }
       &__text {
         @include weight-bolder;
+      }
+    }
+  }
+}
+
+.restaurants {
+  @include flex(column);
+  background-color: #F6F6F6;
+  padding: 54px 18px 64px 18px;
+  &__cards {
+    @include flex(column);
+    .card {
+      height: 251px;
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+      border-radius: 15px;
+      margin-top: 25px;
+      &__img-container {
+        position: relative;
+        &__new-tag {
+          display: flex;
+          @include align-and-justify(center, center);
+          @include darken-green;
+          @include weight-bolder;
+          font-size: $new-font-size;
+          position: absolute;
+          width: 80px;
+          height: 29px;
+          right: 10px;
+          top: 10px;
+          background-color: $tertiary-color;
+        }
+        &__img {
+          height: 174px; 
+          width: 100%;
+          max-height: 100%;
+          object-fit: cover;
+          object-position: 100% 60%;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+        }
+      }
+      &__text-container {
+        @include flex(row);
+        @include align-and-justify(center, space-between);
+        padding: 16px 25px 12px 13px;
+        p {
+          font-size: $menu-subtitle-font-size;
+        }
+        &__icon {
+          font-size: 22px;
+          &--empty {
+            display: block;
+            @media (min-width: 1024px) {
+              &:hover {
+                display: none;
+              }
+            }
+            &:target {
+              display: none;
+            }
+          }
+          &--plain {
+            display: none;
+            @media (min-width: 1440px) {
+              &:hover {
+                display: block;
+              }
+            }
+            &:target {
+              display: block;
+            }
+          }
+          &--gradient {
+            background: linear-gradient($secondary-color, $primary-color);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
       }
     }
   }
