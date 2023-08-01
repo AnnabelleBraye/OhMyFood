@@ -29,6 +29,11 @@ h3 {
   font-size: 1.125em;
 }
 
+a {
+  text-decoration: none;
+  color: #101010;
+}
+
 /**
   Common
 */
@@ -75,7 +80,7 @@ h3 {
 }
 
 /**
-  Description
+  Description section
 */
 .description {
   text-align: center;
@@ -103,7 +108,7 @@ h3 {
 }
 
 /**
-  Functioning
+  Functioning section
 */
 .functioning {
   display: flex;
@@ -155,6 +160,9 @@ h3 {
   font-weight: 500;
 }
 
+/**
+  Restaurants section
+*/
 .restaurants {
   display: flex;
   flex-direction: column;
@@ -229,4 +237,35 @@ h3 {
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/**
+  Footer
+*/
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  color: #ffffff;
+  padding: 22px 25px;
+  gap: 16px;
+}
+.footer-container h3 {
+  font-family: Shrikhand;
+  font-size: 1.125em;
+  font-style: italic;
+  font-weight: 400;
+}
+.footer-container__list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  list-style-type: none;
+}
+.footer-container__list li {
+  color: #ffffff;
+  font-weight: 500;
+}
+.footer-container__list .m-r {
+  margin-right: 12px;
 }/*# sourceMappingURL=style.css.map */
