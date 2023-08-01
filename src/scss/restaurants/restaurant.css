@@ -1,4 +1,6 @@
-@import "style.css";
+@import "style.css"; /** 
+  Variables
+*/
 h2 {
   font-size: 1.75em;
 }

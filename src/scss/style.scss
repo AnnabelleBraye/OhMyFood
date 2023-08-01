@@ -1,32 +1,5 @@
-/** 
-  Variables
-*/
-$primary-color: #9356DC;
-$secondary-color: #FF79DA;
-$tertiary-color: #99E2D0;
-$white-color: #ffffff;
-// $btn-text-color: #ffffff;
-// $darken-green-color: #008766;
-$black-color: #101010;
-$grey-2-color: #EAEAEA;
-$grey-light-color: #F6F6F6;
-$grey-tint-2-color: #7E7E7E;
-$darken-grey-color: #353535;
 
-$logo-title-font-family: Shrikhand;
-$text-font-family: Roboto;
-
-$logo-font-size: 1.875em; // 30px
-// $big-title-size: 2.5em; // 40px
-
-$section-title-font-size: 1.5em; // 24px
-
-$menu-title-font-size: 1.125em; // 18px
-$menu-subtitle-font-size: 1.06em; // 17px
-
-$paragraph-font-size: 1.125em; // 18px
-
-$button-font-size: 1em; // 16px ==> regular
+@import "./utils/variables.scss";
 
 /**
   Classes
@@ -90,6 +63,11 @@ h3 {
   font-size: $menu-title-font-size;
 }
 
+a {
+  text-decoration: none;
+  color: $black-color;
+}
+
 /**
   Common
 */
@@ -97,7 +75,6 @@ h3 {
   @include weight-bolder;
   font-size: $button-font-size;
   background: linear-gradient($secondary-color, $primary-color);
-  // color: $btn-text-color;
   color: $white-color;
   border-radius: 25px;
   border: none;
@@ -133,7 +110,7 @@ h3 {
 }
 
 /**
-  Description
+  Description section
 */
 .description {
   text-align: center;
@@ -159,7 +136,7 @@ h3 {
 }
 
 /**
-  Functioning
+  Functioning section
 */
 .functioning {
   @include flex(column);
@@ -204,6 +181,106 @@ h3 {
       &__text {
         @include weight-bolder;
       }
+    }
+  }
+}
+
+/**
+  Restaurants section
+*/
+.restaurants {
+  @include flex(column);
+  background-color: #F6F6F6;
+  padding: 54px 18px 64px 18px;
+  &__cards {
+    @include flex(column);
+    .card {
+      height: 251px;
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+      border-radius: 15px;
+      margin-top: 25px;
+      &__img-container {
+        position: relative;
+        &__new-tag {
+          display: flex;
+          @include align-and-justify(center, center);
+          @include darken-green;
+          @include weight-bolder;
+          font-size: $new-font-size;
+          position: absolute;
+          width: 80px;
+          height: 29px;
+          right: 10px;
+          top: 10px;
+          background-color: $tertiary-color;
+        }
+        &__img {
+          height: 174px; 
+          width: 100%;
+          max-height: 100%;
+          object-fit: cover;
+          object-position: 100% 60%;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+        }
+      }
+      &__text-container {
+        @include flex(row);
+        @include align-and-justify(center, space-between);
+        padding: 16px 25px 12px 13px;
+        p {
+          font-size: $menu-subtitle-font-size;
+        }
+        &__icon {
+          font-size: 22px;
+          .empty {
+            display: block;
+          }
+          .plain {
+            display: none;
+          }
+          &:hover .empty {
+            display: none;
+          }
+          &:hover .plain {
+            display: block;
+          }
+          &--gradient {
+            background: linear-gradient($secondary-color, $primary-color);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+  Footer
+*/
+.footer-container {
+  @include flex(column);
+  background-color: $darken-grey-color;
+  color: $white-color;    
+  padding: 22px 25px;
+  gap: 16px;
+  h3 {
+    font-family: $logo-title-font-family;
+    font-size: $footer-title-font-size;
+    font-style: italic;
+    font-weight: 400;
+  }
+  &__list {
+    @include flex(column);
+    gap: 7px;
+    list-style-type: none;
+    li {
+      color: $white-color;
+      @include weight-bolder;
+    }
+    .m-r {
+      margin-right: 12px;
     }
   }
 }
