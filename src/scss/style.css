@@ -1,5 +1,8 @@
 /** 
-  Variables
+  Index
+*/
+/**
+  Restaurants
 */
 /**
   Classes
@@ -209,26 +212,16 @@ h3 {
 .restaurants__cards .card__text-container__icon {
   font-size: 22px;
 }
-.restaurants__cards .card__text-container__icon--empty {
+.restaurants__cards .card__text-container__icon .empty {
   display: block;
 }
-@media (min-width: 1024px) {
-  .restaurants__cards .card__text-container__icon--empty:hover {
-    display: none;
-  }
-}
-.restaurants__cards .card__text-container__icon--empty:target {
+.restaurants__cards .card__text-container__icon .plain {
   display: none;
 }
-.restaurants__cards .card__text-container__icon--plain {
+.restaurants__cards .card__text-container__icon:hover .empty {
   display: none;
 }
-@media (min-width: 1440px) {
-  .restaurants__cards .card__text-container__icon--plain:hover {
-    display: block;
-  }
-}
-.restaurants__cards .card__text-container__icon--plain:target {
+.restaurants__cards .card__text-container__icon:hover .plain {
   display: block;
 }
 .restaurants__cards .card__text-container__icon--gradient {

@@ -1,34 +1,5 @@
-/** 
-  Variables
-*/
-$primary-color: #9356DC;
-$secondary-color: #FF79DA;
-$tertiary-color: #99E2D0;
-$white-color: #ffffff;
-// $btn-text-color: #ffffff;
-// $darken-green-color: #008766;
-$black-color: #101010;
-$grey-2-color: #EAEAEA;
-$grey-light-color: #F6F6F6;
-$grey-tint-2-color: #7E7E7E;
-$darken-grey-color: #353535;
 
-$logo-title-font-family: Shrikhand;
-$text-font-family: Roboto;
-
-$logo-font-size: 1.875em; // 30px
-// $big-title-size: 2.5em; // 40px
-
-$section-title-font-size: 1.5em; // 24px
-
-$menu-title-font-size: 1.125em; // 18px
-$menu-subtitle-font-size: 1.06em; // 17px
-
-$paragraph-font-size: 1.125em; // 18px
-
-$button-font-size: 1em; // 16px ==> regular
-
-$new-font-size: 0.875em; // 14px
+@import "./utils/variables.scss";
 
 /**
   Classes
@@ -255,27 +226,17 @@ h3 {
         }
         &__icon {
           font-size: 22px;
-          &--empty {
+          .empty {
             display: block;
-            @media (min-width: 1024px) {
-              &:hover {
-                display: none;
-              }
-            }
-            &:target {
-              display: none;
-            }
           }
-          &--plain {
+          .plain {
             display: none;
-            @media (min-width: 1440px) {
-              &:hover {
-                display: block;
-              }
-            }
-            &:target {
-              display: block;
-            }
+          }
+          &:hover .empty {
+            display: none;
+          }
+          &:hover .plain {
+            display: block;
           }
           &--gradient {
             background: linear-gradient($secondary-color, $primary-color);
