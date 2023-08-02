@@ -1,0 +1,10 @@
+/**
+  Common
+*/
+.btn {
+  font-size: $button-font-size;
+  background: linear-gradient($secondary-color, $primary-color);
+  color: $white-color;
+  border-radius: 25px;
+  border: none;
+}
