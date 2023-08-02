@@ -1,4 +1,19 @@
 
+.location-container {
+  @include flex(row);
+  @include align-and-justify(center, center);
+  width: 100%;
+  color: $darken-grey-color;
+  background-color: $grey-2-color;
+
+  & > .icon-container {
+    @include width-height(12px, 16px);
+    line-height: 18.75px;
+    display: flex;
+    padding-right: 17px;
+  }
+}
+
 /**
   Description section
 */
@@ -37,7 +52,7 @@
     .card {
       @include flex(row);
       @include width-height(100%, 72px);
-      @include card(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 20px);
+      @include card(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 20px, 25px);
       background-color: $grey-light-color;
       align-items: center;
       box-sizing: border-box;
@@ -75,7 +90,7 @@
   &__cards {
     @include flex(column);
     .card {
-      @include card(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 15px);
+      @include card(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 15px, 25px);
       height: 251px;
       &__img-container {
         position: relative;
@@ -105,26 +120,6 @@
         padding: 16px 25px 12px 13px;
         & > p {
           font-size: $menu-subtitle-font-size;
-        }
-        &__icon {
-          font-size: 22px;
-          .empty {
-            display: block;
-          }
-          .plain {
-            display: none;
-          }
-          &:hover .empty {
-            display: none;
-          }
-          &:hover .plain {
-            display: block;
-          }
-          &--gradient {
-            background: linear-gradient($secondary-color, $primary-color);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
         }
       }
     }

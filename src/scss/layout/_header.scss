@@ -3,28 +3,5 @@
   Header
 */
 .header {
-  @include flex(column);
-  @include align-and-justify(center, center);
-  h1 {
-    font-family: $logo-title-font-family;
-    font-size: $logo-font-size;
-    color: $black-color;
-    font-style: italic;
-    padding: 14px 0;
-  }
-
-  &__location-container {
-    @include flex(row);
-    @include align-and-justify(center, center);
-    width: 100%;
-    color: $darken-grey-color;
-    background-color: $grey-2-color;
-
-    & > .icon-container {
-      @include width-height(12px, 16px);
-      line-height: 18.75px;
-      display: flex;
-      padding-right: 17px;
-    }
-  }
+  align-items: center;
 }
