@@ -1,0 +1,20 @@
+.heart-icon {
+  font-size: 22px;
+  .empty {
+    display: block;
+  }
+  .plain {
+    display: none;
+  }
+  &:hover .empty {
+    display: none;
+  }
+  &:hover .plain {
+    display: block;
+  }
+  &--gradient {
+    background: linear-gradient($secondary-color, $primary-color);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

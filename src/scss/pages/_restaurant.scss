@@ -1,10 +1,87 @@
-@import "style.css";
-@import "./utils/variables.scss";
-
-h2 {
-  font-size: $restaurant-name-font-size;
+.logo {
+  @include align-and-justify(center, center);
 }
 
-h3 {
-  font-size: $dish-title-font-size;
+.header__back-nav {
+  @include align-and-justify(center, center);
+  @include width-height(30px, 30px);
+  padding-left: 17px;
+  margin-right: 42px;
+}
+
+.container {
+  height: 100vw;
+}
+
+.img-restaurant {
+  @include width-height(100%, 275px);
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.menu-container {
+  position: relative;
+  width: 100%;
+  background-color: $grey-light-color;
+  top: -58px;
+  border-radius: 40px 40px 0 0;
+  & h2 {
+    padding-left: 17px;
+  }
+  .menu {
+    padding: 0 17px;
+    &__title {
+      @include align-and-justify(center, left);
+      padding-top: 40px;
+      & > h2 {
+        margin-right: 30px;
+      }
+    }
+
+    .course {
+      margin-top: 40px;
+      &__title {
+        text-transform: uppercase;
+      }
+      &__title-line {
+        width: 40px;
+        margin-top: 10px;
+        border-bottom: 3px solid $tertiary-color;
+      }
+      &__cards {
+        & .card {
+          @include flex(row);
+          @include align-and-justify(center, space-between);
+          @include card(0px 4px 15px 0px rgba(0, 0, 0, 0.10), 15px, 12px);
+          padding: 15px;
+          &__dish-text {
+            &__title {
+              margin-bottom: 5px;
+            }
+          }
+          &__dish-price {
+            align-self: flex-end;
+            color: $darken-grey-color;
+          }
+        }
+      }
+    }
+  }
+  &__btn-container {
+    @include align-and-justify(center, center);
+    &__btn {
+      padding: 15px 48px;
+      margin: 40px 0;
+    }
+  }
+}
+
+.foot {
+  position: relative;
+  top: -58px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
 }

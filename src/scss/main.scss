@@ -9,10 +9,13 @@
 
 /// Components
 @import "./components/button";
+@import "./components/heart-icon";
 
 /// Layout
+@import "./layout/grid";
 @import "./layout/header";
 @import "./layout/footer";
 
 /// Pages
 @import "./pages/home";
+@import "./pages/restaurant";
