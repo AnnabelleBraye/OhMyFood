@@ -1,0 +1,19 @@
+body {
+  font-family: $text-font-family;
+}
+
+h3 {
+  font-size: $menu-title-font-size;
+}
+
+.restaurant-name {
+  font: {
+    family: $logo-title-font-family;
+    size: $restaurant-name-font-size;
+  }
+}
+
+.dish-title {
+  font-size: $dish-title-font-size;
+}
+

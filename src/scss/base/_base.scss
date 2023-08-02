@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  font: {
+    family: $logo-title-font-family;
+    size: $logo-font-size;
+    style: italic;
+  }
+  color: $black-color;
+  padding: 14px 0;
+}
+
+a {
+  text-decoration: none;
+  color: $black-color;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.p-0 {
+  padding: 0;
+}

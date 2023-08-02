@@ -1,0 +1,23 @@
+/**
+  Mixin
+*/
+@mixin flex($dir) {
+  display: flex;
+  flex-direction: $dir;
+}
+
+@mixin align-and-justify($align, $justify) {
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin card($boxShadow, $borderRadius, $marginTop) {
+  box-shadow: $boxShadow;
+  border-radius: $borderRadius;
+  margin-top: $marginTop;
+}

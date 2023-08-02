@@ -1,0 +1,29 @@
+/**
+  Footer
+*/
+.footer-container {
+  @include flex(column);
+  background-color: $darken-grey-color;
+  color: $white-color;    
+  padding: 22px 25px;
+  gap: 16px;
+  & > h3 {
+    font: {
+      family: $logo-title-font-family;
+      size: $footer-title-font-size;
+      style: italic;
+    }
+  }
+  &__list {
+    @include flex(column);
+    gap: 7px;
+    list-style-type: none;
+    li {
+      color: $white-color;
+      font-weight: 500;
+    }
+    .m-r {
+      margin-right: 12px;
+    }
+  }
+}
