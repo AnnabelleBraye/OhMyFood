@@ -1,4 +1,3 @@
-
 @import "./utils/variables.scss";
 
 /**
@@ -15,27 +14,6 @@
 /**
   Mixin
 */
-@mixin darken-green {
-  color: darken($tertiary-color, 41%);
-  // color: $darken-green-color;
-}
-
-@mixin draken-grey {
-  color: $darken-grey-color;
-}
-
-@mixin weight-light {
-  font-weight: 300;
-}
-
-@mixin weight-bolder {
-  font-weight: 500;
-}
-
-@mixin weight-bold {
-  font-weight: 700;
-}
-
 @mixin flex($dir) {
   display: flex;
   flex-direction: $dir;
@@ -46,10 +24,14 @@
   justify-content: $justify;
 }
 
-@mixin width-height-line($width, $height, $line) {
+@mixin width-height($width, $height) {
   width: $width;
   height: $height;
-  line-height: $line;
+}
+
+@mixin card($boxShadow, $borderRadius) {
+  box-shadow: $boxShadow;
+  border-radius: $borderRadius;
 }
 
 /**
@@ -72,12 +54,19 @@ a {
   Common
 */
 .btn {
-  @include weight-bolder;
   font-size: $button-font-size;
   background: linear-gradient($secondary-color, $primary-color);
   color: $white-color;
   border-radius: 25px;
   border: none;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.bolder {
+  font-weight: 500;
 }
 
 /**
@@ -97,12 +86,13 @@ a {
   &__location-container {
     @include flex(row);
     @include align-and-justify(center, center);
-    @include draken-grey;
     width: 100%;
+    color: $darken-grey-color;
     background-color: $grey-2-color;
 
     & > .icon-container {
-      @include width-height-line(12px, 16px, 18.75);
+      @include width-height(12px, 16px);
+      line-height: 18.75px;
       display: flex;
       padding-right: 17px;
     }
@@ -117,21 +107,19 @@ a {
   padding: 39px 0 57px 0;
   background-color: $grey-light-color;
   h2 {
-    @include width-height-line(275px, 68px, 28.13px);
+    @include width-height(275px, 68px);
+    line-height: 28.13px;
     margin: auto;
   }
-  .paragraph {
-    @include draken-grey;
-    @include weight-light;
+  & > .paragraph {
+    color: $darken-grey-color;
     font-size: $paragraph-font-size;
     margin: auto;
     margin-bottom: 27px;
     width: 315px;
   }
   &__btn {
-    @include weight-bolder;
-    width: 218px;
-    height: 50px;
+    @include width-height(218px, 50px);
   }
 }
 
@@ -146,27 +134,25 @@ a {
   }
   &__cards {
     margin: 0 20px 0 26px ;
-    .card {
+    & > .card {
       @include flex(row);
+      @include width-height(100%, 72px);
       background-color: $grey-light-color;
       align-items: center;
       box-sizing: border-box;
       position: relative;
       margin: auto;
       margin-top: 25px;
-      width: 100%;
-      height: 72px;
       border-radius: 20px;
       box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
       &__order {
         display: flex;
         @include align-and-justify(center, center);
+        @include width-height(24px, 24px);
         position: absolute;
         top: calc(50% - 12px);
         left: -12px;
         background-color: $primary-color;
-        width: 24px;
-        height: 24px;
         border: 1px solid $primary-color;
         border-radius: 50%;
         color: white;
@@ -177,9 +163,6 @@ a {
       }
       &__icon--purple {
         color: $primary-color;
-      }
-      &__text {
-        @include weight-bolder;
       }
     }
   }
@@ -194,7 +177,7 @@ a {
   padding: 54px 18px 64px 18px;
   &__cards {
     @include flex(column);
-    .card {
+    & > .card {
       height: 251px;
       box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
       border-radius: 15px;
@@ -204,19 +187,16 @@ a {
         &__new-tag {
           display: flex;
           @include align-and-justify(center, center);
-          @include darken-green;
-          @include weight-bolder;
+          @include width-height(80px, 29px);
           font-size: $new-font-size;
+          color: $darken-green-color;
           position: absolute;
-          width: 80px;
-          height: 29px;
           right: 10px;
           top: 10px;
           background-color: $tertiary-color;
         }
         &__img {
-          height: 174px; 
-          width: 100%;
+          @include width-height(100%, 174px);
           max-height: 100%;
           object-fit: cover;
           object-position: 100% 60%;
@@ -228,7 +208,7 @@ a {
         @include flex(row);
         @include align-and-justify(center, space-between);
         padding: 16px 25px 12px 13px;
-        p {
+        & > p {
           font-size: $menu-subtitle-font-size;
         }
         &__icon {
@@ -265,11 +245,13 @@ a {
   color: $white-color;    
   padding: 22px 25px;
   gap: 16px;
-  h3 {
-    font-family: $logo-title-font-family;
-    font-size: $footer-title-font-size;
-    font-style: italic;
-    font-weight: 400;
+  & > h3 {
+    font: {
+      family: $logo-title-font-family;
+      size: $footer-title-font-size;
+      style: italic;
+      weight: 400;
+    }
   }
   &__list {
     @include flex(column);
@@ -277,7 +259,7 @@ a {
     list-style-type: none;
     li {
       color: $white-color;
-      @include weight-bolder;
+      font-weight: 500;
     }
     .m-r {
       margin-right: 12px;
