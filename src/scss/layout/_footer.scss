@@ -7,6 +7,12 @@
   color: $white-color;    
   padding: 22px 25px;
   gap: 16px;
+
+  @media (min-width: map-get($breakpoints, large)) {
+    @include flex(row);
+    flex-direction: row-reverse;
+  }
+
   & > h3 {
     font: {
       family: $logo-title-font-family;
@@ -18,6 +24,12 @@
     @include flex(column);
     gap: 7px;
     list-style-type: none;
+
+    @media (min-width: map-get($breakpoints, large)) {
+      @include flex(row);
+      gap: 7px;
+    }
+
     li {
       color: $white-color;
       font-weight: 500;
@@ -25,5 +37,16 @@
     .m-r {
       margin-right: 12px;
     }
+  }
+}
+
+@media (min-width: map-get($breakpoints, large)) {
+  .footer-li-large {
+    display: inline-block;
+    width: 168px;
+  }
+  .footer-li-small {
+    display: block;
+    width: 130px;
   }
 }
