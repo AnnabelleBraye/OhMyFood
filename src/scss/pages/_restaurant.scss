@@ -7,6 +7,16 @@
   @include width-height(30px, 30px);
   padding-left: 17px;
   margin-right: 42px;
+
+  @media (min-width: map-get($breakpoints, large)) {
+    margin-right: 0;
+  }
+}
+
+.header__title {
+  @media (min-width: map-get($breakpoints, large)) {
+    margin: auto;
+  }
 }
 
 .container {
@@ -18,6 +28,10 @@
   max-width: 100%;
   object-fit: cover;
   position: relative;
+
+  @media (min-width: map-get($breakpoints, large)) {
+    height: 383px;
+  }
 }
 
 .menu-container {
@@ -26,6 +40,12 @@
   background-color: $grey-light-color;
   top: -58px;
   border-radius: 40px 40px 0 0;
+
+  @media (min-width: map-get($breakpoints, large)) {
+    margin: 0 193px;
+    width: auto;
+  }
+
   & h2 {
     padding-left: 17px;
   }
@@ -34,6 +54,11 @@
     &__title {
       @include align-and-justify(center, left);
       padding-top: 40px;
+      
+      @media (min-width: map-get($breakpoints, large)) {
+        justify-content: center;
+      }
+
       & > h2 {
         margin-right: 30px;
       }

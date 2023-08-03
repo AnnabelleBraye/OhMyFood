@@ -11,6 +11,10 @@
   @media (min-width: map-get($breakpoints, large)) {
     @include flex(row);
     flex-direction: row-reverse;
+    box-sizing: border-box;
+    height: 114px;
+    align-items: end;
+    padding: 30px 25px;
   }
 
   & > h3 {
