@@ -37,6 +37,9 @@
     li {
       color: $white-color;
       font-weight: 500;
+      .rotate {
+        transform: rotate(-45deg);
+      }
     }
     .m-r {
       margin-right: 12px;

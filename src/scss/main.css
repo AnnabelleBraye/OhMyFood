@@ -168,6 +168,9 @@ h3 {
   color: #ffffff;
   font-weight: 500;
 }
+.footer-container__list li .rotate {
+  transform: rotate(-45deg);
+}
 .footer-container__list .m-r {
   margin-right: 12px;
 }
