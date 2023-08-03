@@ -39,3 +39,10 @@ $menu-section-font-size: 1em;// 16px regular size = h4
 
 $dish-title-font-size: 1.125em; // 18px
 $dish-subtitle-font-size: 0.94;// 15px
+
+/**
+  Breakpoints
+*/
+$breakpoints: (
+  'large': 1080px
+) !default;
