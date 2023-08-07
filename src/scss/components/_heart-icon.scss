@@ -6,15 +6,16 @@
   .plain {
     display: none;
   }
-  &:hover .empty {
+  &:hover .empty, &:active .empty {
     display: none;
   }
-  &:hover .plain {
+  &:hover .plain, &:active .plain {
     display: block;
   }
   &--gradient {
     background: linear-gradient($secondary-color, $primary-color);
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
