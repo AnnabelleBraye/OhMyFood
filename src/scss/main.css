@@ -212,6 +212,11 @@ h3 {
   display: flex;
   padding-right: 17px;
 }
+.location-container > input {
+  border: none;
+  background-color: inherit;
+  padding: 15px 0;
+}
 
 /**
   Description section

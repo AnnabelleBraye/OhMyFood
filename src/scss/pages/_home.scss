@@ -12,6 +12,11 @@
     display: flex;
     padding-right: 17px;
   }
+  & > input {
+    border: none;
+    background-color: inherit;
+    padding: 15px 0;
+  }
 }
 
 /**
