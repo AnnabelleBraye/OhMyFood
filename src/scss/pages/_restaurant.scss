@@ -78,7 +78,8 @@
         & .card {
           @include flex(row);
           @include align-and-justify(center, space-between);
-          @include card(0px 4px 15px 0px rgba(0, 0, 0, 0.10), 15px, 12px);
+          @include shadow-radius(0px 4px 15px 0px rgba(0, 0, 0, 0.10), 15px);
+          margin-top: 12px;
           padding: 15px;
           &__dish-text {
             &__title {

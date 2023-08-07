@@ -16,8 +16,8 @@
   height: $height;
 }
 
-@mixin card($boxShadow, $borderRadius, $marginTop) {
+
+@mixin shadow-radius($boxShadow, $borderRadius) {
   box-shadow: $boxShadow;
   border-radius: $borderRadius;
-  margin-top: $marginTop;
 }

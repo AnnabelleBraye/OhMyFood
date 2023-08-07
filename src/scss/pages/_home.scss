@@ -76,7 +76,8 @@
     .card {
       @include flex(row);
       @include width-height(100%, 72px);
-      @include card(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 20px, 25px);
+      @include shadow-radius(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 20px);
+      margin-top: 25px;
       background-color: $grey-light-color;
       align-items: center;
       box-sizing: border-box;
@@ -127,7 +128,8 @@
     } 
     
     .card {
-      @include card(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 15px, 25px);
+      @include shadow-radius(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 15px);
+      margin-top: 25px;
       height: 251px;
       &__img-container {
         position: relative;
