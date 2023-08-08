@@ -445,6 +445,7 @@ h3 {
 @media (min-width: 1440px) {
   .menu-container {
     margin: 0 193px;
+    padding: 0 193px;
     width: auto;
   }
 }
