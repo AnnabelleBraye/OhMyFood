@@ -78,18 +78,62 @@
       &__cards {
         & .card {
           @include flex(row);
-          @include align-and-justify(center, space-between);
           @include shadow-radius(0px 4px 15px 0px rgba(0, 0, 0, 0.10), 15px);
           margin-top: 12px;
-          padding: 15px;
-          &__dish-text {
-            &__title {
-              margin-bottom: 5px;
+          position: relative;
+          &:hover {
+            & .card__content__dish-price {
+              transform: translateX(-59px);
+              transition: transform 300ms ease-in-out;
+            }
+            & .check {
+              background-color: $tertiary-color;
+              transform: scaleX(1);
+              width: 59px;
+            }
+            & .card__content__dish-text__subtitle {
+              width: calc(100% - 65px);
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
           }
-          &__dish-price {
-            align-self: flex-end;
-            color: $darken-grey-color;
+          &__content {
+            @include flex(row);
+            align-items: center;
+            margin: 15px;
+            width: 100%;
+            &__dish-text {
+              width: 100%;
+              &__title {
+                margin-bottom: 5px;
+              }
+            }
+            &__dish-price {
+              align-self: flex-end;
+              color: $darken-grey-color;
+            }
+          }
+          .check {
+            display: flex;
+            @include align-and-justify(center, center);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 100%;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: all 300ms ease-in-out;
+            width: 0;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+
+            &--color {
+              font-size: 20px;
+              color: white;
+            }
           }
         }
       }
