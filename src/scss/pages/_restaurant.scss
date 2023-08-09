@@ -84,7 +84,7 @@
           &:hover {
             & .card__content__dish-price {
               transform: translateX(-59px);
-              transition: transform 300ms ease-in-out;
+              transition: transform 500ms ease-in-out;
             }
             & .check {
               background-color: $tertiary-color;

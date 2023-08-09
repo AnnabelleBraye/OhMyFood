@@ -501,7 +501,7 @@ h3 {
 }
 .menu-container .menu .course__cards .card:hover .card__content__dish-price {
   transform: translateX(-59px);
-  transition: transform 300ms ease-in-out;
+  transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course__cards .card:hover .check {
   background-color: #99E2D0;
