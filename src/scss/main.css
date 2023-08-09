@@ -508,6 +508,9 @@ h3 {
   transform: scaleX(1);
   width: 59px;
 }
+.menu-container .menu .course__cards .card:hover .check__icon {
+  transform: rotate(-360deg);
+}
 .menu-container .menu .course__cards .card:hover .card__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
@@ -543,14 +546,16 @@ h3 {
   height: 100%;
   transform: scaleX(0);
   transform-origin: right;
-  transition: all 300ms ease-in-out;
+  transition: all 500ms ease-in-out;
   width: 0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-.menu-container .menu .course__cards .card .check--color {
+.menu-container .menu .course__cards .card .check__icon {
   font-size: 20px;
   color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
 }
 .menu-container__btn-container {
   align-items: center;
