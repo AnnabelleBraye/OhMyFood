@@ -1,5 +1,5 @@
 main, header {
-  animation: show-hide 0ms 3100ms both;
+  animation: show-hide 0ms 3100ms backwards;
 }
 
 .spinner-container {
@@ -10,17 +10,13 @@ main, header {
   width: 100%;
   min-height: 100vh;
   z-index: 1;
-  animation: spinner 2000ms 100ms alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
-  &:hover {
-    animation-play-state: paused;
-  }
   .spinner {
     position: fixed;
     height: 150px;
     width: 150px;
     display: grid;
     mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0.2), #000);
-    // animation: spinner 1500ms 100ms ease-in-out alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
+    animation: spinner 1500ms 100ms ease-in-out alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
   }
 
   .spinner,
@@ -71,7 +67,7 @@ main, header {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-99999px);
+    transform: translateX(-9999px);
     z-index: 0;
   }
 }

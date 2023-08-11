@@ -209,7 +209,7 @@ h3 {
   }
 }
 main, header {
-  animation: show-hide 0ms 3100ms both;
+  animation: show-hide 0ms 3100ms backwards;
 }
 
 .spinner-container {
@@ -220,10 +220,6 @@ main, header {
   width: 100%;
   min-height: 100vh;
   z-index: 1;
-  animation: spinner 2000ms 100ms alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
-}
-.spinner-container:hover {
-  animation-play-state: paused;
 }
 .spinner-container .spinner {
   position: fixed;
@@ -232,6 +228,7 @@ main, header {
   display: grid;
   -webkit-mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0.2), #000);
           mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0.2), #000);
+  animation: spinner 1500ms 100ms ease-in-out alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
 }
 .spinner-container .spinner,
 .spinner-container .spinner::after,
@@ -266,7 +263,7 @@ main, header {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-99999px);
+    transform: translateX(-9999px);
     z-index: 0;
   }
 }
