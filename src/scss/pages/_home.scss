@@ -38,27 +38,6 @@ main, header {
       $secondary-color 96%,
       rgba(0, 0, 255, 0),
     ) 0 center/30% 9% repeat-x;
-
-    // radial-gradient(
-    //   closest-side at 50% 12%,
-    //   rgba(255, 0, 0, $opacity) 96%,
-    //   rgba(255, 0, 0, 0)
-    // ) 50% 0/30px 120px no-repeat, // 50% 0/20% 80% no-repeat,
-    // radial-gradient(
-    //   closest-side at 88% 50%,
-    //   rgba(255, 255, 0, $opacity) 96%,
-    //   rgba(0, 0, 255, 0)
-    //   ) 100% 50%/ 80% 20% no-repeat,
-    //   radial-gradient(
-    //     closest-side at 50% 88%,
-    //     rgba(0, 255, 0, $opacity) 96%,
-    //     rgba(0, 255, 0, 0)
-    //     ) 50% 100%/20% 80% no-repeat,
-    //     radial-gradient(
-    //       closest-side at 12% 50%,
-    //       rgba(0, 0, 255, $opacity) 96%,
-    //     rgba(0, 255, 0, 0)
-    //   ) 0% 50%/80% 20% no-repeat;
   }
 
   .spinner::after,
