@@ -1,3 +1,101 @@
+main, header {
+  animation: show-hide 0ms 3100ms both;
+}
+
+.spinner-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+  animation: spinner 1500ms 100ms alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
+  &:hover {
+    animation-play-state: paused;
+  }
+  .spinner {
+    position: fixed;
+    height: 150px;
+    width: 150px;
+    display: grid;
+    mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0.2), #000);
+    // animation: spinner 1500ms 100ms ease-in-out alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
+  }
+
+  .spinner,
+  .spinner::after,
+  .spinner::before { 
+  $opacity: 0.8;
+  background: 
+    radial-gradient(
+      closest-side at 50% 14.5%,
+      $primary-color 96%,
+      rgba(255, 0, 0, 0)
+    ) center 0/9% 30% repeat-y, // position x = 0, y = 50%, bg-size x = 0-20%, bg-size y = 80-100%
+    radial-gradient(
+      closest-side at 14.5% 50%,
+      $secondary-color 96%,
+      rgba(0, 0, 255, 0),
+    ) 0 center/30% 9% repeat-x;
+
+    // radial-gradient(
+    //   closest-side at 50% 12%,
+    //   rgba(255, 0, 0, $opacity) 96%,
+    //   rgba(255, 0, 0, 0)
+    // ) 50% 0/30px 120px no-repeat, // 50% 0/20% 80% no-repeat,
+    // radial-gradient(
+    //   closest-side at 88% 50%,
+    //   rgba(255, 255, 0, $opacity) 96%,
+    //   rgba(0, 0, 255, 0)
+    //   ) 100% 50%/ 80% 20% no-repeat,
+    //   radial-gradient(
+    //     closest-side at 50% 88%,
+    //     rgba(0, 255, 0, $opacity) 96%,
+    //     rgba(0, 255, 0, 0)
+    //     ) 50% 100%/20% 80% no-repeat,
+    //     radial-gradient(
+    //       closest-side at 12% 50%,
+    //       rgba(0, 0, 255, $opacity) 96%,
+    //     rgba(0, 255, 0, 0)
+    //   ) 0% 50%/80% 20% no-repeat;
+  }
+
+  .spinner::after,
+  .spinner::before {
+    content: "";
+    grid-area: 1/1;
+    transform: rotate(30deg);
+  }
+  .spinner::before {
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes spinner {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes show-hide {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showhide-content {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-99999px);
+    z-index: 0;
+  }
+}
 
 .location-container {
   @include flex(row);
