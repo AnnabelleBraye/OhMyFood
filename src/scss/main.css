@@ -220,7 +220,7 @@ main, header {
   width: 100%;
   min-height: 100vh;
   z-index: 1;
-  animation: spinner 1500ms 100ms alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
+  animation: spinner 2000ms 100ms alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
 }
 .spinner-container:hover {
   animation-play-state: paused;
