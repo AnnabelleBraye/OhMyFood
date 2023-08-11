@@ -1,5 +1,6 @@
-main, header {
+.delayed-container {
   animation: show-hide 0ms 3100ms backwards;
+  z-index: 1;
 }
 
 .spinner-container {
@@ -10,6 +11,7 @@ main, header {
   width: 100%;
   min-height: 100vh;
   z-index: 1;
+  animation: showhide-content 0ms 3100ms forwards;
   .spinner {
     position: fixed;
     height: 150px;
