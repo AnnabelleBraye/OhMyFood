@@ -1,3 +1,83 @@
+$spinner-duration: 1000ms;
+$spinner-delay: 100ms;
+$hide-spinner-duration: 0ms;
+$hide-spinner-delay: 2100ms;
+$show-all-duration: 0ms;
+.delayed-container {
+  animation: show-hide $show-all-duration $hide-spinner-delay backwards;
+  z-index: 1;
+}
+
+.spinner-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+  animation: showhide-content $hide-spinner-duration $hide-spinner-delay forwards;
+  .spinner {
+    position: fixed;
+    height: 150px;
+    width: 150px;
+    display: grid;
+    mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0.2), #000);
+    animation: spinner $spinner-duration $spinner-delay ease-in-out alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
+  }
+
+  .spinner,
+  .spinner::after,
+  .spinner::before { 
+  $opacity: 0.8;
+  background: 
+    radial-gradient(
+      closest-side at 50% 14.5%,
+      $primary-color 96%,
+      rgba(255, 0, 0, 0)
+    ) center 0/9% 30% repeat-y, // position x = 0, y = 50%, bg-size x = 0-20%, bg-size y = 80-100%
+    radial-gradient(
+      closest-side at 14.5% 50%,
+      $secondary-color 96%,
+      rgba(0, 0, 255, 0),
+    ) 0 center/30% 9% repeat-x;
+  }
+
+  .spinner::after,
+  .spinner::before {
+    content: "";
+    grid-area: 1/1;
+    transform: rotate(30deg);
+  }
+  .spinner::before {
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes spinner {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes show-hide {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showhide-content {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-9999px);
+    z-index: 0;
+  }
+}
 
 .location-container {
   @include flex(row);
@@ -11,6 +91,11 @@
     line-height: 18.75px;
     display: flex;
     padding-right: 17px;
+  }
+  & > input {
+    border: none;
+    background-color: inherit;
+    padding: 15px 0;
   }
 }
 
@@ -76,7 +161,8 @@
     .card {
       @include flex(row);
       @include width-height(100%, 72px);
-      @include card(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 20px, 25px);
+      @include shadow-radius(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 20px);
+      margin-top: 25px;
       background-color: $grey-light-color;
       align-items: center;
       box-sizing: border-box;
@@ -127,7 +213,8 @@
     } 
     
     .card {
-      @include card(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 15px, 25px);
+      @include shadow-radius(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 15px);
+      margin-top: 25px;
       height: 251px;
       &__img-container {
         position: relative;
