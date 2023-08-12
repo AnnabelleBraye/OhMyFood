@@ -81,16 +81,18 @@ h3 {
   position: relative;
   z-index: 1;
 }
-.btn:hover .btn--lighter {
+.btn:hover::after {
   opacity: 1;
 }
-.btn--lighter {
+.btn::after {
+  content: "";
   position: absolute;
-  opacity: 0;
   top: 0;
   bottom: 0;
-  left: 0;
   right: 0;
+  left: 0;
+  border-radius: 25px;
+  opacity: 0;
   z-index: -1;
   transition: opacity 200ms;
   background: linear-gradient(#ff83dd, #985ede);
@@ -209,7 +211,7 @@ h3 {
   }
 }
 .delayed-container {
-  animation: show-hide 0ms 3100ms backwards;
+  animation: show-hide 0ms 2100ms backwards;
   z-index: 1;
 }
 
@@ -221,7 +223,7 @@ h3 {
   width: 100%;
   min-height: 100vh;
   z-index: 1;
-  animation: showhide-content 0ms 3100ms forwards;
+  animation: showhide-content 0ms 2100ms forwards;
 }
 .spinner-container .spinner {
   position: fixed;
@@ -230,7 +232,7 @@ h3 {
   display: grid;
   -webkit-mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0.2), #000);
           mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0.2), #000);
-  animation: spinner 1500ms 100ms ease-in-out alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
+  animation: spinner 1000ms 100ms ease-in-out alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
 }
 .spinner-container .spinner,
 .spinner-container .spinner::after,

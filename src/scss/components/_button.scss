@@ -9,16 +9,13 @@
   border: none;
   position: relative;
   z-index: 1;
-  &:hover .btn--lighter {
+  &:hover::after {
     opacity: 1;
   }
-  &--lighter {
-    position: absolute;
+  &::after {
+    @include pseudo-elem;
+    border-radius: 25px;
     opacity: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     z-index: -1;
     transition: opacity 200ms;
     background: linear-gradient(lighten($secondary-color, 2%), lighten($primary-color, 2%));

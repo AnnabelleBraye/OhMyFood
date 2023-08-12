@@ -1,5 +1,10 @@
+$spinner-duration: 1000ms;
+$spinner-delay: 100ms;
+$hide-spinner-duration: 0ms;
+$hide-spinner-delay: 2100ms;
+$show-all-duration: 0ms;
 .delayed-container {
-  animation: show-hide 0ms 3100ms backwards;
+  animation: show-hide $show-all-duration $hide-spinner-delay backwards;
   z-index: 1;
 }
 
@@ -11,14 +16,14 @@
   width: 100%;
   min-height: 100vh;
   z-index: 1;
-  animation: showhide-content 0ms 3100ms forwards;
+  animation: showhide-content $hide-spinner-duration $hide-spinner-delay forwards;
   .spinner {
     position: fixed;
     height: 150px;
     width: 150px;
     display: grid;
     mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0.2), #000);
-    animation: spinner 1500ms 100ms ease-in-out alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
+    animation: spinner $spinner-duration $spinner-delay ease-in-out alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
   }
 
   .spinner,
