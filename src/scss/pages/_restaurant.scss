@@ -69,7 +69,8 @@
 
     // Title variables
     $title-duration: 300ms;
-    $title-delays: 0ms, 2600ms, 5200ms;
+    // $title-delays: 0ms, 500ms, 1000ms;
+    $title-delays: 0ms, 0ms, 0ms;
     @for $j from 1 through 3 {
       .course--#{$j} {
         margin-top: 40px;
@@ -99,10 +100,10 @@
 
               // Dish variables
               $dish-duration: 800ms;
-              $dish-delay: $title-delay - 200ms + 500ms*$i;
+              $dish-delay: $title-delay - 200ms + 400ms*$i;
               animation: 
                 translate-dish $dish-duration $dish-delay ease-in-out both,
-                opak $dish-duration $dish-delay+650ms both;
+                opak $dish-duration $dish-delay+700ms both;
 
               &:hover {
                 & .card--#{$i}__content__dish-price {
@@ -117,9 +118,6 @@
                 & .check__icon {
                   transform: rotate(-360deg);
                 }
-                // & .card--#{$i}__content__dish-text {
-                //   width: calc(100% - 40px); 
-                // }
                 & .card--#{$i}__content__dish-text__subtitle {
                   width: calc(100% - 65px);
                   white-space: nowrap;
@@ -203,24 +201,13 @@
 @keyframes translate-dish {
   0% {
     transform: translateY(9999px);
-    // opacity: 0;
   }
-  // 90% {
-    // opacity: 1;
-  // }
   100% {
     transform: translateY(0);
-    // opacity: 1;
   }
 }
 
 @keyframes opak {
-  // 0% {
-  //   opacity: 0;
-  // }
-  // 90% {
-    // opacity: 1;
-  // }
   100% {
     opacity: 1;
   }
