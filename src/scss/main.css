@@ -104,28 +104,42 @@ h3 {
   background-color: inherit;
 }
 
-.heart-icon {
+.heart-container {
+  width: 22px;
+  height: 22px;
   font-size: 22px;
 }
-.heart-icon .empty {
-  display: block;
+.heart-container .heart-empty {
+  position: absolute;
 }
-.heart-icon .plain {
-  display: none;
-}
-.heart-icon:hover .empty, .heart-icon:active .empty {
-  display: none;
-}
-.heart-icon:hover .plain, .heart-icon:active .plain {
-  display: block;
-}
-.heart-icon--gradient {
+.heart-container .heart-plain {
+  position: absolute;
+  opacity: 0;
   background: linear-gradient(#FF79DA, #9356DC);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.heart-container .heart-plain:hover {
+  animation: show-hide 300ms 50ms forwards;
+}
 
+@keyframes show-hide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes color-heart {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 .flex {
   display: flex;
 }

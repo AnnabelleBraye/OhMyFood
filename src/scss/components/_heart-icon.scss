@@ -1,41 +1,36 @@
-.heart-icon {
-  font-size: 22px;
-  .empty {
-    display: block;
+.heart-container {
+  @include width-height(22px, 22px);
+  font-size:22px;
+  & .heart-empty {
+    position: absolute;
   }
-  .plain {
-    display: none;
-  }
-  &:hover .empty, &:active .empty {
-    display: none;
-  }
-  &:hover .plain, &:active .plain {
-    display: block;
-  }
-  &--gradient {
+  & .heart-plain {
+    position: absolute;
+    opacity: 0;
     background: linear-gradient($secondary-color, $primary-color);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    &:hover {
+      animation: show-hide 300ms 50ms forwards;
+    }
   }
 }
-// .heart-icon {
-//   font-size: 22px;
-//   position: relative;
-//   &:hover .heart-icon-plain{
-//     opacity: 1;
-//   }
-//   .heart-icon-plain {
-//     font-size: 22px;
-//     opacity: 0;
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     background: linear-gradient($secondary-color, $primary-color);
-//     background-clip: text;
-//     -webkit-background-clip: text;
-//     -webkit-text-fill-color: transparent;
-//   }
-// }
+
+@keyframes show-hide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes color-heart {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
