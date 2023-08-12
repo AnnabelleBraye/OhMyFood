@@ -1,20 +1,36 @@
-.heart-icon {
-  font-size: 22px;
-  .empty {
-    display: block;
+.heart-container {
+  @include width-height(22px, 22px);
+  font-size:22px;
+  & .heart-empty {
+    position: absolute;
   }
-  .plain {
-    display: none;
-  }
-  &:hover .empty {
-    display: none;
-  }
-  &:hover .plain {
-    display: block;
-  }
-  &--gradient {
+  & .heart-plain {
+    position: absolute;
+    opacity: 0;
     background: linear-gradient($secondary-color, $primary-color);
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    &:hover {
+      animation: show-hide 300ms 50ms forwards;
+    }
+  }
+}
+
+@keyframes show-hide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes color-heart {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
   }
 }
