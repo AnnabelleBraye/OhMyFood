@@ -492,6 +492,7 @@ h3 {
 
 .container {
   height: 100vw;
+  max-height: 100vw;
 }
 
 .img-restaurant {
@@ -511,6 +512,7 @@ h3 {
 .menu-container {
   position: relative;
   width: 100%;
+  overflow: hidden;
   background-color: #F6F6F6;
   top: -58px;
   border-radius: 40px 40px 0 0;
@@ -541,61 +543,83 @@ h3 {
 .menu-container .menu__title > h2 {
   margin-right: 30px;
 }
-.menu-container .menu .course {
+.menu-container .menu .course--1 {
   margin-top: 40px;
 }
-.menu-container .menu .course__title {
+.menu-container .menu .course--1__title {
   text-transform: uppercase;
 }
-.menu-container .menu .course__title-line {
+.menu-container .menu .course--1__title--1 {
+  animation: scale-menu 300ms 0ms backwards ease-in;
+}
+.menu-container .menu .course--1__title--2 {
+  animation: scale-menu 300ms 0ms backwards ease-in;
+}
+.menu-container .menu .course--1__title--3 {
+  animation: scale-menu 300ms 0ms backwards ease-in;
+}
+.menu-container .menu .course--1__title-line {
   width: 40px;
   margin-top: 10px;
   border-bottom: 3px solid #99E2D0;
 }
-.menu-container .menu .course__cards .card {
+.menu-container .menu .course--1__cards {
+  position: relative;
+}
+.menu-container .menu .course--1__cards .card--1 {
   display: flex;
   flex-direction: row;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   margin-top: 12px;
   position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 300ms ease-in-out both, opak 800ms 950ms both;
 }
-.menu-container .menu .course__cards .card:hover .card__content__dish-price {
+.menu-container .menu .course--1__cards .card--1:hover .card--1__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
-.menu-container .menu .course__cards .card:hover .check {
+.menu-container .menu .course--1__cards .card--1:hover .check {
   background-color: #99E2D0;
   transform: scaleX(1);
   width: 59px;
 }
-.menu-container .menu .course__cards .card:hover .check__icon {
+.menu-container .menu .course--1__cards .card--1:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course__cards .card:hover .card__content__dish-text__subtitle {
+.menu-container .menu .course--1__cards .card--1:hover .card--1__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu-container .menu .course__cards .card__content {
+.menu-container .menu .course--1__cards .card--1__content {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 15px;
+  padding: 15px;
   width: 100%;
+  box-sizing: border-box;
 }
-.menu-container .menu .course__cards .card__content__dish-text {
-  width: 100%;
+.menu-container .menu .course--1__cards .card--1__content__dish-text {
+  width: 90%;
 }
-.menu-container .menu .course__cards .card__content__dish-text__title {
+.menu-container .menu .course--1__cards .card--1__content__dish-text__title {
   margin-bottom: 5px;
 }
-.menu-container .menu .course__cards .card__content__dish-price {
-  align-self: flex-end;
+.menu-container .menu .course--1__cards .card--1__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--1__cards .card--1__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
   color: #353535;
 }
-.menu-container .menu .course__cards .card .check {
+.menu-container .menu .course--1__cards .card--1 .check {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -612,7 +636,889 @@ h3 {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-.menu-container .menu .course__cards .card .check__icon {
+.menu-container .menu .course--1__cards .card--1 .check__icon {
+  font-size: 20px;
+  color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
+}
+.menu-container .menu .course--1__cards .card--2 {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 12px;
+  position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 800ms ease-in-out both, opak 800ms 1450ms both;
+}
+.menu-container .menu .course--1__cards .card--2:hover .card--2__content__dish-price {
+  transform: translateX(-59px);
+  transition: transform 500ms ease-in-out;
+}
+.menu-container .menu .course--1__cards .card--2:hover .check {
+  background-color: #99E2D0;
+  transform: scaleX(1);
+  width: 59px;
+}
+.menu-container .menu .course--1__cards .card--2:hover .check__icon {
+  transform: rotate(-360deg);
+}
+.menu-container .menu .course--1__cards .card--2:hover .card--2__content__dish-text__subtitle {
+  width: calc(100% - 65px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--1__cards .card--2__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.menu-container .menu .course--1__cards .card--2__content__dish-text {
+  width: 90%;
+}
+.menu-container .menu .course--1__cards .card--2__content__dish-text__title {
+  margin-bottom: 5px;
+}
+.menu-container .menu .course--1__cards .card--2__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--1__cards .card--2__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
+  color: #353535;
+}
+.menu-container .menu .course--1__cards .card--2 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out;
+  width: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-container .menu .course--1__cards .card--2 .check__icon {
+  font-size: 20px;
+  color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
+}
+.menu-container .menu .course--1__cards .card--3 {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 12px;
+  position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 1300ms ease-in-out both, opak 800ms 1950ms both;
+}
+.menu-container .menu .course--1__cards .card--3:hover .card--3__content__dish-price {
+  transform: translateX(-59px);
+  transition: transform 500ms ease-in-out;
+}
+.menu-container .menu .course--1__cards .card--3:hover .check {
+  background-color: #99E2D0;
+  transform: scaleX(1);
+  width: 59px;
+}
+.menu-container .menu .course--1__cards .card--3:hover .check__icon {
+  transform: rotate(-360deg);
+}
+.menu-container .menu .course--1__cards .card--3:hover .card--3__content__dish-text__subtitle {
+  width: calc(100% - 65px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--1__cards .card--3__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.menu-container .menu .course--1__cards .card--3__content__dish-text {
+  width: 90%;
+}
+.menu-container .menu .course--1__cards .card--3__content__dish-text__title {
+  margin-bottom: 5px;
+}
+.menu-container .menu .course--1__cards .card--3__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--1__cards .card--3__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
+  color: #353535;
+}
+.menu-container .menu .course--1__cards .card--3 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out;
+  width: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-container .menu .course--1__cards .card--3 .check__icon {
+  font-size: 20px;
+  color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
+}
+.menu-container .menu .course--1__cards .card--4 {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 12px;
+  position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 1800ms ease-in-out both, opak 800ms 2450ms both;
+}
+.menu-container .menu .course--1__cards .card--4:hover .card--4__content__dish-price {
+  transform: translateX(-59px);
+  transition: transform 500ms ease-in-out;
+}
+.menu-container .menu .course--1__cards .card--4:hover .check {
+  background-color: #99E2D0;
+  transform: scaleX(1);
+  width: 59px;
+}
+.menu-container .menu .course--1__cards .card--4:hover .check__icon {
+  transform: rotate(-360deg);
+}
+.menu-container .menu .course--1__cards .card--4:hover .card--4__content__dish-text__subtitle {
+  width: calc(100% - 65px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--1__cards .card--4__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.menu-container .menu .course--1__cards .card--4__content__dish-text {
+  width: 90%;
+}
+.menu-container .menu .course--1__cards .card--4__content__dish-text__title {
+  margin-bottom: 5px;
+}
+.menu-container .menu .course--1__cards .card--4__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--1__cards .card--4__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
+  color: #353535;
+}
+.menu-container .menu .course--1__cards .card--4 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out;
+  width: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-container .menu .course--1__cards .card--4 .check__icon {
+  font-size: 20px;
+  color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
+}
+.menu-container .menu .course--2 {
+  margin-top: 40px;
+}
+.menu-container .menu .course--2__title {
+  text-transform: uppercase;
+}
+.menu-container .menu .course--2__title--1 {
+  animation: scale-menu 300ms 2600ms backwards ease-in;
+}
+.menu-container .menu .course--2__title--2 {
+  animation: scale-menu 300ms 2600ms backwards ease-in;
+}
+.menu-container .menu .course--2__title--3 {
+  animation: scale-menu 300ms 2600ms backwards ease-in;
+}
+.menu-container .menu .course--2__title-line {
+  width: 40px;
+  margin-top: 10px;
+  border-bottom: 3px solid #99E2D0;
+}
+.menu-container .menu .course--2__cards {
+  position: relative;
+}
+.menu-container .menu .course--2__cards .card--1 {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 12px;
+  position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 2900ms ease-in-out both, opak 800ms 3550ms both;
+}
+.menu-container .menu .course--2__cards .card--1:hover .card--1__content__dish-price {
+  transform: translateX(-59px);
+  transition: transform 500ms ease-in-out;
+}
+.menu-container .menu .course--2__cards .card--1:hover .check {
+  background-color: #99E2D0;
+  transform: scaleX(1);
+  width: 59px;
+}
+.menu-container .menu .course--2__cards .card--1:hover .check__icon {
+  transform: rotate(-360deg);
+}
+.menu-container .menu .course--2__cards .card--1:hover .card--1__content__dish-text__subtitle {
+  width: calc(100% - 65px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--2__cards .card--1__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.menu-container .menu .course--2__cards .card--1__content__dish-text {
+  width: 90%;
+}
+.menu-container .menu .course--2__cards .card--1__content__dish-text__title {
+  margin-bottom: 5px;
+}
+.menu-container .menu .course--2__cards .card--1__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--2__cards .card--1__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
+  color: #353535;
+}
+.menu-container .menu .course--2__cards .card--1 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out;
+  width: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-container .menu .course--2__cards .card--1 .check__icon {
+  font-size: 20px;
+  color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
+}
+.menu-container .menu .course--2__cards .card--2 {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 12px;
+  position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 3400ms ease-in-out both, opak 800ms 4050ms both;
+}
+.menu-container .menu .course--2__cards .card--2:hover .card--2__content__dish-price {
+  transform: translateX(-59px);
+  transition: transform 500ms ease-in-out;
+}
+.menu-container .menu .course--2__cards .card--2:hover .check {
+  background-color: #99E2D0;
+  transform: scaleX(1);
+  width: 59px;
+}
+.menu-container .menu .course--2__cards .card--2:hover .check__icon {
+  transform: rotate(-360deg);
+}
+.menu-container .menu .course--2__cards .card--2:hover .card--2__content__dish-text__subtitle {
+  width: calc(100% - 65px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--2__cards .card--2__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.menu-container .menu .course--2__cards .card--2__content__dish-text {
+  width: 90%;
+}
+.menu-container .menu .course--2__cards .card--2__content__dish-text__title {
+  margin-bottom: 5px;
+}
+.menu-container .menu .course--2__cards .card--2__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--2__cards .card--2__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
+  color: #353535;
+}
+.menu-container .menu .course--2__cards .card--2 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out;
+  width: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-container .menu .course--2__cards .card--2 .check__icon {
+  font-size: 20px;
+  color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
+}
+.menu-container .menu .course--2__cards .card--3 {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 12px;
+  position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 3900ms ease-in-out both, opak 800ms 4550ms both;
+}
+.menu-container .menu .course--2__cards .card--3:hover .card--3__content__dish-price {
+  transform: translateX(-59px);
+  transition: transform 500ms ease-in-out;
+}
+.menu-container .menu .course--2__cards .card--3:hover .check {
+  background-color: #99E2D0;
+  transform: scaleX(1);
+  width: 59px;
+}
+.menu-container .menu .course--2__cards .card--3:hover .check__icon {
+  transform: rotate(-360deg);
+}
+.menu-container .menu .course--2__cards .card--3:hover .card--3__content__dish-text__subtitle {
+  width: calc(100% - 65px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--2__cards .card--3__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.menu-container .menu .course--2__cards .card--3__content__dish-text {
+  width: 90%;
+}
+.menu-container .menu .course--2__cards .card--3__content__dish-text__title {
+  margin-bottom: 5px;
+}
+.menu-container .menu .course--2__cards .card--3__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--2__cards .card--3__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
+  color: #353535;
+}
+.menu-container .menu .course--2__cards .card--3 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out;
+  width: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-container .menu .course--2__cards .card--3 .check__icon {
+  font-size: 20px;
+  color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
+}
+.menu-container .menu .course--2__cards .card--4 {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 12px;
+  position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 4400ms ease-in-out both, opak 800ms 5050ms both;
+}
+.menu-container .menu .course--2__cards .card--4:hover .card--4__content__dish-price {
+  transform: translateX(-59px);
+  transition: transform 500ms ease-in-out;
+}
+.menu-container .menu .course--2__cards .card--4:hover .check {
+  background-color: #99E2D0;
+  transform: scaleX(1);
+  width: 59px;
+}
+.menu-container .menu .course--2__cards .card--4:hover .check__icon {
+  transform: rotate(-360deg);
+}
+.menu-container .menu .course--2__cards .card--4:hover .card--4__content__dish-text__subtitle {
+  width: calc(100% - 65px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--2__cards .card--4__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.menu-container .menu .course--2__cards .card--4__content__dish-text {
+  width: 90%;
+}
+.menu-container .menu .course--2__cards .card--4__content__dish-text__title {
+  margin-bottom: 5px;
+}
+.menu-container .menu .course--2__cards .card--4__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--2__cards .card--4__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
+  color: #353535;
+}
+.menu-container .menu .course--2__cards .card--4 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out;
+  width: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-container .menu .course--2__cards .card--4 .check__icon {
+  font-size: 20px;
+  color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
+}
+.menu-container .menu .course--3 {
+  margin-top: 40px;
+}
+.menu-container .menu .course--3__title {
+  text-transform: uppercase;
+}
+.menu-container .menu .course--3__title--1 {
+  animation: scale-menu 300ms 5200ms backwards ease-in;
+}
+.menu-container .menu .course--3__title--2 {
+  animation: scale-menu 300ms 5200ms backwards ease-in;
+}
+.menu-container .menu .course--3__title--3 {
+  animation: scale-menu 300ms 5200ms backwards ease-in;
+}
+.menu-container .menu .course--3__title-line {
+  width: 40px;
+  margin-top: 10px;
+  border-bottom: 3px solid #99E2D0;
+}
+.menu-container .menu .course--3__cards {
+  position: relative;
+}
+.menu-container .menu .course--3__cards .card--1 {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 12px;
+  position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 5500ms ease-in-out both, opak 800ms 6150ms both;
+}
+.menu-container .menu .course--3__cards .card--1:hover .card--1__content__dish-price {
+  transform: translateX(-59px);
+  transition: transform 500ms ease-in-out;
+}
+.menu-container .menu .course--3__cards .card--1:hover .check {
+  background-color: #99E2D0;
+  transform: scaleX(1);
+  width: 59px;
+}
+.menu-container .menu .course--3__cards .card--1:hover .check__icon {
+  transform: rotate(-360deg);
+}
+.menu-container .menu .course--3__cards .card--1:hover .card--1__content__dish-text__subtitle {
+  width: calc(100% - 65px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--3__cards .card--1__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.menu-container .menu .course--3__cards .card--1__content__dish-text {
+  width: 90%;
+}
+.menu-container .menu .course--3__cards .card--1__content__dish-text__title {
+  margin-bottom: 5px;
+}
+.menu-container .menu .course--3__cards .card--1__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--3__cards .card--1__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
+  color: #353535;
+}
+.menu-container .menu .course--3__cards .card--1 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out;
+  width: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-container .menu .course--3__cards .card--1 .check__icon {
+  font-size: 20px;
+  color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
+}
+.menu-container .menu .course--3__cards .card--2 {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 12px;
+  position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 6000ms ease-in-out both, opak 800ms 6650ms both;
+}
+.menu-container .menu .course--3__cards .card--2:hover .card--2__content__dish-price {
+  transform: translateX(-59px);
+  transition: transform 500ms ease-in-out;
+}
+.menu-container .menu .course--3__cards .card--2:hover .check {
+  background-color: #99E2D0;
+  transform: scaleX(1);
+  width: 59px;
+}
+.menu-container .menu .course--3__cards .card--2:hover .check__icon {
+  transform: rotate(-360deg);
+}
+.menu-container .menu .course--3__cards .card--2:hover .card--2__content__dish-text__subtitle {
+  width: calc(100% - 65px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--3__cards .card--2__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.menu-container .menu .course--3__cards .card--2__content__dish-text {
+  width: 90%;
+}
+.menu-container .menu .course--3__cards .card--2__content__dish-text__title {
+  margin-bottom: 5px;
+}
+.menu-container .menu .course--3__cards .card--2__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--3__cards .card--2__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
+  color: #353535;
+}
+.menu-container .menu .course--3__cards .card--2 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out;
+  width: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-container .menu .course--3__cards .card--2 .check__icon {
+  font-size: 20px;
+  color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
+}
+.menu-container .menu .course--3__cards .card--3 {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 12px;
+  position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 6500ms ease-in-out both, opak 800ms 7150ms both;
+}
+.menu-container .menu .course--3__cards .card--3:hover .card--3__content__dish-price {
+  transform: translateX(-59px);
+  transition: transform 500ms ease-in-out;
+}
+.menu-container .menu .course--3__cards .card--3:hover .check {
+  background-color: #99E2D0;
+  transform: scaleX(1);
+  width: 59px;
+}
+.menu-container .menu .course--3__cards .card--3:hover .check__icon {
+  transform: rotate(-360deg);
+}
+.menu-container .menu .course--3__cards .card--3:hover .card--3__content__dish-text__subtitle {
+  width: calc(100% - 65px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--3__cards .card--3__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.menu-container .menu .course--3__cards .card--3__content__dish-text {
+  width: 90%;
+}
+.menu-container .menu .course--3__cards .card--3__content__dish-text__title {
+  margin-bottom: 5px;
+}
+.menu-container .menu .course--3__cards .card--3__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--3__cards .card--3__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
+  color: #353535;
+}
+.menu-container .menu .course--3__cards .card--3 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out;
+  width: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-container .menu .course--3__cards .card--3 .check__icon {
+  font-size: 20px;
+  color: white;
+  transform: rotate(0);
+  transition: transform 500ms 100ms;
+}
+.menu-container .menu .course--3__cards .card--4 {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-top: 12px;
+  position: relative;
+  opacity: 0;
+  animation: translate-dish 800ms 7000ms ease-in-out both, opak 800ms 7650ms both;
+}
+.menu-container .menu .course--3__cards .card--4:hover .card--4__content__dish-price {
+  transform: translateX(-59px);
+  transition: transform 500ms ease-in-out;
+}
+.menu-container .menu .course--3__cards .card--4:hover .check {
+  background-color: #99E2D0;
+  transform: scaleX(1);
+  width: 59px;
+}
+.menu-container .menu .course--3__cards .card--4:hover .check__icon {
+  transform: rotate(-360deg);
+}
+.menu-container .menu .course--3__cards .card--4:hover .card--4__content__dish-text__subtitle {
+  width: calc(100% - 65px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--3__cards .card--4__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.menu-container .menu .course--3__cards .card--4__content__dish-text {
+  width: 90%;
+}
+.menu-container .menu .course--3__cards .card--4__content__dish-text__title {
+  margin-bottom: 5px;
+}
+.menu-container .menu .course--3__cards .card--4__content__dish-text__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu .course--3__cards .card--4__content__dish-price {
+  width: 10%;
+  align-self: end;
+  justify-content: end;
+  color: #353535;
+}
+.menu-container .menu .course--3__cards .card--4 .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 500ms ease-in-out;
+  width: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.menu-container .menu .course--3__cards .card--4 .check__icon {
   font-size: 20px;
   color: white;
   transform: rotate(0);
@@ -627,6 +1533,27 @@ h3 {
   margin: 40px 0;
 }
 
+@keyframes scale-menu {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes translate-dish {
+  0% {
+    transform: translateY(9999px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes opak {
+  100% {
+    opacity: 1;
+  }
+}
 .foot {
   position: relative;
   top: -58px;

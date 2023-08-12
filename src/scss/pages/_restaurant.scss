@@ -21,6 +21,7 @@
 
 .container {
   height: 100vw;
+  max-height: 100vw;
 }
 
 .img-restaurant {
@@ -37,6 +38,7 @@
 .menu-container {
   position: relative;
   width: 100%;
+  overflow: hidden;
   background-color: $grey-light-color;
   top: -58px;
   border-radius: 40px 40px 0 0;
@@ -65,91 +67,162 @@
       }
     }
 
-    .course {
-      margin-top: 40px;
-      &__title {
-        text-transform: uppercase;
-      }
-      &__title-line {
-        width: 40px;
-        margin-top: 10px;
-        border-bottom: 3px solid $tertiary-color;
-      }
-      &__cards {
-        & .card {
-          @include flex(row);
-          @include shadow-radius(0px 4px 15px 0px rgba(0, 0, 0, 0.10), 15px);
-          margin-top: 12px;
-          position: relative;
-          &:hover {
-            & .card__content__dish-price {
-              transform: translateX(-59px);
-              transition: transform 500ms ease-in-out;
-            }
-            & .check {
-              background-color: $tertiary-color;
-              transform: scaleX(1);
-              width: 59px;
-            }
-            & .check__icon {
-              transform: rotate(-360deg);
-            }
-            & .card__content__dish-text__subtitle {
-              width: calc(100% - 65px);
-              white-space: nowrap;
-              overflow: hidden;
-              text-overflow: ellipsis;
-            }
-          }
-          &__content {
-            @include flex(row);
-            align-items: center;
-            margin: 15px;
-            width: 100%;
-            &__dish-text {
-              width: 100%;
-              &__title {
-                margin-bottom: 5px;
-              }
-            }
-            &__dish-price {
-              align-self: flex-end;
-              color: $darken-grey-color;
-            }
-          }
-          .check {
-            display: flex;
-            @include align-and-justify(center, center);
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            width: 0;
-            height: 100%;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: all 500ms ease-in-out;
-            width: 0;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-
-            &__icon {
-              font-size: 20px;
-              color: white;
-              transform: rotate(0);
-              transition: transform 500ms 100ms;
+    // Title variables
+    $title-duration: 300ms;
+    $title-delays: 0ms, 2600ms, 5200ms;
+    @for $j from 1 through 3 {
+      .course--#{$j} {
+        margin-top: 40px;
+        $title-delay: nth($title-delays, $j);
+        &__title {
+          text-transform: uppercase;
+          @for $i from 1 through 3 {
+            &--#{$i} {
+              animation: scale-menu $title-duration $title-delay backwards ease-in;
             }
           }
         }
-      }
-    }
-  }
+        &__title-line {
+          width: 40px;
+          margin-top: 10px;
+          border-bottom: 3px solid $tertiary-color;
+        }
+        &__cards {
+          position: relative;
+          @for $i from 1 through 4 {
+            & .card--#{$i} { 
+              @include flex(row);
+              @include shadow-radius(0px 4px 15px 0px rgba(0, 0, 0, 0.10), 15px);
+              margin-top: 12px;
+              position: relative;
+              opacity: 0;
+
+              // Dish variables
+              $dish-duration: 800ms;
+              $dish-delay: $title-delay - 200ms + 500ms*$i;
+              animation: 
+                translate-dish $dish-duration $dish-delay ease-in-out both,
+                opak $dish-duration $dish-delay+650ms both;
+
+              &:hover {
+                & .card--#{$i}__content__dish-price {
+                  transform: translateX(-59px);
+                  transition: transform 500ms ease-in-out;
+                }
+                & .check {
+                  background-color: $tertiary-color;
+                  transform: scaleX(1);
+                  width: 59px;
+                }
+                & .check__icon {
+                  transform: rotate(-360deg);
+                }
+                // & .card--#{$i}__content__dish-text {
+                //   width: calc(100% - 40px); 
+                // }
+                & .card--#{$i}__content__dish-text__subtitle {
+                  width: calc(100% - 65px);
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                }
+              }
+              &__content {
+                @include flex(row);
+                align-items: center;
+                padding: 15px;
+                width: 100%;
+                box-sizing: border-box;
+                &__dish-text {
+                  width: 90%;
+                  &__title {
+                    margin-bottom: 5px;
+                  }
+                  &__subtitle {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                }
+                &__dish-price {
+                  width: 10%;
+                  align-self: end;
+                  justify-content: end;
+                  color: $darken-grey-color;
+                }
+              }
+              .check {
+                display: flex;
+                @include align-and-justify(center, center);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 0;
+                height: 100%;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: all 500ms ease-in-out;
+                width: 0;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                
+                &__icon {
+                  font-size: 20px;
+                  color: white;
+                  transform: rotate(0);
+                  transition: transform 500ms 100ms;
+                }
+              }
+            }
+          }
+        }
+      
+      } // course
+    } // for course
+  } // menu
+
   &__btn-container {
     @include align-and-justify(center, center);
     &__btn {
       padding: 15px 48px;
       margin: 40px 0;
     }
+  }
+}
+
+@keyframes scale-menu {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes translate-dish {
+  0% {
+    transform: translateY(9999px);
+    // opacity: 0;
+  }
+  // 90% {
+    // opacity: 1;
+  // }
+  100% {
+    transform: translateY(0);
+    // opacity: 1;
+  }
+}
+
+@keyframes opak {
+  // 0% {
+  //   opacity: 0;
+  // }
+  // 90% {
+    // opacity: 1;
+  // }
+  100% {
+    opacity: 1;
   }
 }
 
