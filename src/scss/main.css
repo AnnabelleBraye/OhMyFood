@@ -306,6 +306,9 @@ h3 {
   background-color: inherit;
   padding: 15px 0;
 }
+.location-container > input:focus {
+  outline: none;
+}
 
 /**
   Description section
@@ -590,7 +593,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 300ms ease-in-out both, opak 800ms 950ms both;
+  animation: translate-dish 800ms 200ms ease-in-out both, opak 800ms 900ms both;
 }
 .menu-container .menu .course--1__cards .card--1:hover .card--1__content__dish-price {
   transform: translateX(-59px);
@@ -666,7 +669,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 800ms ease-in-out both, opak 800ms 1450ms both;
+  animation: translate-dish 800ms 600ms ease-in-out both, opak 800ms 1300ms both;
 }
 .menu-container .menu .course--1__cards .card--2:hover .card--2__content__dish-price {
   transform: translateX(-59px);
@@ -742,7 +745,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 1300ms ease-in-out both, opak 800ms 1950ms both;
+  animation: translate-dish 800ms 1000ms ease-in-out both, opak 800ms 1700ms both;
 }
 .menu-container .menu .course--1__cards .card--3:hover .card--3__content__dish-price {
   transform: translateX(-59px);
@@ -818,7 +821,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 1800ms ease-in-out both, opak 800ms 2450ms both;
+  animation: translate-dish 800ms 1400ms ease-in-out both, opak 800ms 2100ms both;
 }
 .menu-container .menu .course--1__cards .card--4:hover .card--4__content__dish-price {
   transform: translateX(-59px);
@@ -893,13 +896,13 @@ h3 {
   text-transform: uppercase;
 }
 .menu-container .menu .course--2__title--1 {
-  animation: scale-menu 300ms 2600ms backwards ease-in;
+  animation: scale-menu 300ms 0ms backwards ease-in;
 }
 .menu-container .menu .course--2__title--2 {
-  animation: scale-menu 300ms 2600ms backwards ease-in;
+  animation: scale-menu 300ms 0ms backwards ease-in;
 }
 .menu-container .menu .course--2__title--3 {
-  animation: scale-menu 300ms 2600ms backwards ease-in;
+  animation: scale-menu 300ms 0ms backwards ease-in;
 }
 .menu-container .menu .course--2__title-line {
   width: 40px;
@@ -917,7 +920,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 2900ms ease-in-out both, opak 800ms 3550ms both;
+  animation: translate-dish 800ms 200ms ease-in-out both, opak 800ms 900ms both;
 }
 .menu-container .menu .course--2__cards .card--1:hover .card--1__content__dish-price {
   transform: translateX(-59px);
@@ -993,7 +996,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 3400ms ease-in-out both, opak 800ms 4050ms both;
+  animation: translate-dish 800ms 600ms ease-in-out both, opak 800ms 1300ms both;
 }
 .menu-container .menu .course--2__cards .card--2:hover .card--2__content__dish-price {
   transform: translateX(-59px);
@@ -1069,7 +1072,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 3900ms ease-in-out both, opak 800ms 4550ms both;
+  animation: translate-dish 800ms 1000ms ease-in-out both, opak 800ms 1700ms both;
 }
 .menu-container .menu .course--2__cards .card--3:hover .card--3__content__dish-price {
   transform: translateX(-59px);
@@ -1145,7 +1148,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 4400ms ease-in-out both, opak 800ms 5050ms both;
+  animation: translate-dish 800ms 1400ms ease-in-out both, opak 800ms 2100ms both;
 }
 .menu-container .menu .course--2__cards .card--4:hover .card--4__content__dish-price {
   transform: translateX(-59px);
@@ -1220,13 +1223,13 @@ h3 {
   text-transform: uppercase;
 }
 .menu-container .menu .course--3__title--1 {
-  animation: scale-menu 300ms 5200ms backwards ease-in;
+  animation: scale-menu 300ms 0ms backwards ease-in;
 }
 .menu-container .menu .course--3__title--2 {
-  animation: scale-menu 300ms 5200ms backwards ease-in;
+  animation: scale-menu 300ms 0ms backwards ease-in;
 }
 .menu-container .menu .course--3__title--3 {
-  animation: scale-menu 300ms 5200ms backwards ease-in;
+  animation: scale-menu 300ms 0ms backwards ease-in;
 }
 .menu-container .menu .course--3__title-line {
   width: 40px;
@@ -1244,7 +1247,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 5500ms ease-in-out both, opak 800ms 6150ms both;
+  animation: translate-dish 800ms 200ms ease-in-out both, opak 800ms 900ms both;
 }
 .menu-container .menu .course--3__cards .card--1:hover .card--1__content__dish-price {
   transform: translateX(-59px);
@@ -1320,7 +1323,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 6000ms ease-in-out both, opak 800ms 6650ms both;
+  animation: translate-dish 800ms 600ms ease-in-out both, opak 800ms 1300ms both;
 }
 .menu-container .menu .course--3__cards .card--2:hover .card--2__content__dish-price {
   transform: translateX(-59px);
@@ -1396,7 +1399,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 6500ms ease-in-out both, opak 800ms 7150ms both;
+  animation: translate-dish 800ms 1000ms ease-in-out both, opak 800ms 1700ms both;
 }
 .menu-container .menu .course--3__cards .card--3:hover .card--3__content__dish-price {
   transform: translateX(-59px);
@@ -1472,7 +1475,7 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 7000ms ease-in-out both, opak 800ms 7650ms both;
+  animation: translate-dish 800ms 1400ms ease-in-out both, opak 800ms 2100ms both;
 }
 .menu-container .menu .course--3__cards .card--4:hover .card--4__content__dish-price {
   transform: translateX(-59px);

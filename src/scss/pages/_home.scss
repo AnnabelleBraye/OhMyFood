@@ -96,6 +96,10 @@ $show-all-duration: 0ms;
     border: none;
     background-color: inherit;
     padding: 15px 0;
+
+    &:focus {
+      outline: none;
+    }
   }
 }
 
