@@ -8,55 +8,58 @@ $show-all-duration: 0ms;
   z-index: 1;
 }
 
-.spinner-container {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  z-index: 1;
+.spinner {
   animation: showhide-content $hide-spinner-duration $hide-spinner-delay forwards;
-  .spinner {
-    position: fixed;
-    height: 150px;
-    width: 150px;
-    display: grid;
-    mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0.2), #000);
-    animation: spinner $spinner-duration $spinner-delay ease-in-out alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
-  }
-
-  .spinner,
-  .spinner::after,
-  .spinner::before { 
-  $opacity: 0.8;
-  background: 
-    radial-gradient(
-      closest-side at 50% 14.5%,
-      $primary-color 96%,
-      rgba(255, 0, 0, 0)
-    ) center 0/9% 30% repeat-y, // position x = 0, y = 50%, bg-size x = 0-20%, bg-size y = 80-100%
-    radial-gradient(
-      closest-side at 14.5% 50%,
-      $secondary-color 96%,
-      rgba(0, 0, 255, 0),
-    ) 0 center/30% 9% repeat-x;
-  }
-
-  .spinner::after,
-  .spinner::before {
-    content: "";
-    grid-area: 1/1;
-    transform: rotate(30deg);
-  }
-  .spinner::before {
-    transform: rotate(60deg);
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+  width: 100px;
+  aspect-ratio: 1;
+  display: grid;
+  opacity: 0.8;
 }
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  background: 
+  radial-gradient(
+    closest-side,
+    $primary-color 96%,
+    rgba(255, 0, 0, 0)
+  ) 50% 0%/8px 8px no-repeat, // position x = 0, y = 50%, bg-size x = 0-20%, bg-size y = 80-100%
+  radial-gradient(
+    closest-side,
+    $secondary-color 96%,
+    rgba(0, 0, 255, 0),
+  ) 50% 100%/8px 8px no-repeat,
+  radial-gradient(
+    closest-side,
+    $primary-color 96%,
+    rgba(255, 0, 0, 0)
+  ) 100% 50%/8px 8px no-repeat, // position x = 0, y = 50%, bg-size x = 0-20%, bg-size y = 80-100%
+  radial-gradient(
+    closest-side,
+    $secondary-color 96%,
+    rgba(0, 0, 255, 0),
+  ) 0% 50%/8px 8px no-repeat;    
+  animation: spinner 1s infinite, showhide-content 0ms 3100ms forwards;
+}
+
+.spinner::before {
+  background-size: 12px 12px;
+  animation-timing-function: linear;
+}
+
 
 @keyframes spinner {
   100% {
-    transform: rotate(1turn);
+    transform: rotate(0.5turn);
   }
 }
 

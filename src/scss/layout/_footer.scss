@@ -35,8 +35,10 @@
     }
 
     li {
-      color: $white-color;
       font-weight: 500;
+      a {
+        color: $white-color;
+      }
       .rotate {
         transform: rotate(-45deg);
       }
