@@ -204,8 +204,10 @@ h3 {
   }
 }
 .footer-container__list li {
-  color: #ffffff;
   font-weight: 500;
+}
+.footer-container__list li a {
+  color: #ffffff;
 }
 .footer-container__list li .rotate {
   transform: rotate(-45deg);
@@ -229,43 +231,37 @@ h3 {
   z-index: 1;
 }
 
-.spinner-container {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  z-index: 1;
+.spinner {
   animation: showhide-content 0ms 2100ms forwards;
-}
-.spinner-container .spinner {
   position: fixed;
-  height: 150px;
-  width: 150px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+  width: 100px;
+  aspect-ratio: 1;
   display: grid;
-  -webkit-mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0.2), #000);
-          mask: conic-gradient(from 15deg, rgba(0, 0, 0, 0.2), #000);
-  animation: spinner 1000ms 100ms ease-in-out alternate-reverse infinite, showhide-content 0ms 3100ms forwards;
+  opacity: 0.8;
 }
-.spinner-container .spinner,
-.spinner-container .spinner::after,
-.spinner-container .spinner::before {
-  background: radial-gradient(closest-side at 50% 14.5%, #9356DC 96%, rgba(255, 0, 0, 0)) center 0/9% 30% repeat-y, radial-gradient(closest-side at 14.5% 50%, #FF79DA 96%, rgba(0, 0, 255, 0)) 0 center/30% 9% repeat-x;
-}
-.spinner-container .spinner::after,
-.spinner-container .spinner::before {
+
+.spinner::before,
+.spinner::after {
   content: "";
   grid-area: 1/1;
-  transform: rotate(30deg);
+  background: radial-gradient(closest-side, #9356DC 96%, rgba(255, 0, 0, 0)) 50% 0%/8px 8px no-repeat, radial-gradient(closest-side, #FF79DA 96%, rgba(0, 0, 255, 0)) 50% 100%/8px 8px no-repeat, radial-gradient(closest-side, #9356DC 96%, rgba(255, 0, 0, 0)) 100% 50%/8px 8px no-repeat, radial-gradient(closest-side, #FF79DA 96%, rgba(0, 0, 255, 0)) 0% 50%/8px 8px no-repeat;
+  animation: spinner 1s infinite, showhide-content 0ms 3100ms forwards;
 }
-.spinner-container .spinner::before {
-  transform: rotate(60deg);
+
+.spinner::before {
+  background-size: 12px 12px;
+  animation-timing-function: linear;
 }
 
 @keyframes spinner {
   100% {
-    transform: rotate(1turn);
+    transform: rotate(0.5turn);
   }
 }
 @keyframes show-hide {
@@ -1573,6 +1569,7 @@ h3 {
     opacity: 1;
   }
 }
+/* Footer */
 .foot {
   position: relative;
   top: -58px;
