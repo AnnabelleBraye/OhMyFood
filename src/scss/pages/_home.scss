@@ -48,7 +48,7 @@ $show-all-duration: 0ms;
     $secondary-color 96%,
     rgba(0, 0, 255, 0),
   ) 0% 50%/8px 8px no-repeat;    
-  animation: spinner 1s infinite, showhide-content 0ms 3100ms forwards;
+  animation: spinner $spinner-duration infinite, showhide-content 0ms 3100ms forwards;
 }
 
 .spinner::before {

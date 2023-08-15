@@ -75,7 +75,7 @@ h3 {
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   font-size: 1em;
-  background: linear-gradient(#FF79DA, #9356DC);
+  background: linear-gradient(#ff79da, #9356dc);
   color: #ffffff;
   border: none;
   position: relative;
@@ -115,7 +115,7 @@ h3 {
 .heart-container .heart-plain {
   position: absolute;
   opacity: 0;
-  background: linear-gradient(#FF79DA, #9356DC);
+  background: linear-gradient(#ff79da, #9356dc);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -250,7 +250,14 @@ h3 {
 .spinner::after {
   content: "";
   grid-area: 1/1;
-  background: radial-gradient(closest-side, #9356DC 96%, rgba(255, 0, 0, 0)) 50% 0%/8px 8px no-repeat, radial-gradient(closest-side, #FF79DA 96%, rgba(0, 0, 255, 0)) 50% 100%/8px 8px no-repeat, radial-gradient(closest-side, #9356DC 96%, rgba(255, 0, 0, 0)) 100% 50%/8px 8px no-repeat, radial-gradient(closest-side, #FF79DA 96%, rgba(0, 0, 255, 0)) 0% 50%/8px 8px no-repeat;
+  background: radial-gradient(closest-side, #9356dc 96%, rgba(255, 0, 0, 0)) 50%
+      0%/8px 8px no-repeat,
+    radial-gradient(closest-side, #ff79da 96%, rgba(0, 0, 255, 0)) 50% 100%/8px
+      8px no-repeat,
+    radial-gradient(closest-side, #9356dc 96%, rgba(255, 0, 0, 0)) 100% 50%/8px
+      8px no-repeat,
+    radial-gradient(closest-side, #ff79da 96%, rgba(0, 0, 255, 0)) 0% 50%/8px
+      8px no-repeat;
   animation: spinner 1s infinite, showhide-content 0ms 3100ms forwards;
 }
 
@@ -288,7 +295,7 @@ h3 {
   justify-content: center;
   width: 100%;
   color: #353535;
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
 }
 .location-container > .icon-container {
   width: 12px;
@@ -312,7 +319,7 @@ h3 {
 .description {
   text-align: center;
   padding: 39px 0 57px 0;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 @media (min-width: 1440px) {
   .description {
@@ -382,7 +389,7 @@ h3 {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   margin-top: 25px;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   align-items: center;
   box-sizing: border-box;
   position: relative;
@@ -396,17 +403,17 @@ h3 {
   position: absolute;
   top: calc(50% - 12px);
   left: -12px;
-  background-color: #9356DC;
-  border: 1px solid #9356DC;
+  background-color: #9356dc;
+  border: 1px solid #9356dc;
   border-radius: 50%;
   color: white;
 }
 .functioning__cards .card__icon {
   margin: 0 27px 0 33px;
-  color: #7E7E7E;
+  color: #7e7e7e;
 }
 .functioning__cards .card__icon--purple {
-  color: #9356DC;
+  color: #9356dc;
 }
 
 /**
@@ -415,7 +422,7 @@ h3 {
 .restaurants {
   display: flex;
   flex-direction: column;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   padding: 54px 18px 64px 18px;
 }
 @media (min-width: 1440px) {
@@ -433,7 +440,7 @@ h3 {
     grid-template-columns: 1fr 1fr;
     row-gap: 50px;
     -moz-column-gap: 100px;
-         column-gap: 100px;
+    column-gap: 100px;
   }
 }
 .restaurants__cards .card {
@@ -456,16 +463,16 @@ h3 {
   position: absolute;
   right: 10px;
   top: 10px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
 }
 .restaurants__cards .card__img-container__img {
   width: 100%;
   height: 174px;
   max-height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: 100% 60%;
-     object-position: 100% 60%;
+  object-position: 100% 60%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -515,7 +522,7 @@ h3 {
   height: 275px;
   max-width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: relative;
 }
 @media (min-width: 1440px) {
@@ -528,7 +535,7 @@ h3 {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   top: -58px;
   border-radius: 40px 40px 0 0;
 }
@@ -576,7 +583,7 @@ h3 {
 .menu-container .menu .course--1__title-line {
   width: 40px;
   margin-top: 10px;
-  border-bottom: 3px solid #99E2D0;
+  border-bottom: 3px solid #99e2d0;
 }
 .menu-container .menu .course--1__cards {
   position: relative;
@@ -591,19 +598,27 @@ h3 {
   opacity: 0;
   animation: translate-dish 800ms 200ms ease-in-out both, opak 800ms 900ms both;
 }
-.menu-container .menu .course--1__cards .card--1:hover .card--1__content__dish-price {
+.menu-container
+  .menu
+  .course--1__cards
+  .card--1:hover
+  .card--1__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--1__cards .card--1:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--1__cards .card--1:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--1__cards .card--1:hover .card--1__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--1__cards
+  .card--1:hover
+  .card--1__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -667,19 +682,27 @@ h3 {
   opacity: 0;
   animation: translate-dish 800ms 600ms ease-in-out both, opak 800ms 1300ms both;
 }
-.menu-container .menu .course--1__cards .card--2:hover .card--2__content__dish-price {
+.menu-container
+  .menu
+  .course--1__cards
+  .card--2:hover
+  .card--2__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--1__cards .card--2:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--1__cards .card--2:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--1__cards .card--2:hover .card--2__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--1__cards
+  .card--2:hover
+  .card--2__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -741,21 +764,30 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 1000ms ease-in-out both, opak 800ms 1700ms both;
+  animation: translate-dish 800ms 1000ms ease-in-out both,
+    opak 800ms 1700ms both;
 }
-.menu-container .menu .course--1__cards .card--3:hover .card--3__content__dish-price {
+.menu-container
+  .menu
+  .course--1__cards
+  .card--3:hover
+  .card--3__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--1__cards .card--3:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--1__cards .card--3:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--1__cards .card--3:hover .card--3__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--1__cards
+  .card--3:hover
+  .card--3__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -817,21 +849,30 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 1400ms ease-in-out both, opak 800ms 2100ms both;
+  animation: translate-dish 800ms 1400ms ease-in-out both,
+    opak 800ms 2100ms both;
 }
-.menu-container .menu .course--1__cards .card--4:hover .card--4__content__dish-price {
+.menu-container
+  .menu
+  .course--1__cards
+  .card--4:hover
+  .card--4__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--1__cards .card--4:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--1__cards .card--4:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--1__cards .card--4:hover .card--4__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--1__cards
+  .card--4:hover
+  .card--4__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -903,7 +944,7 @@ h3 {
 .menu-container .menu .course--2__title-line {
   width: 40px;
   margin-top: 10px;
-  border-bottom: 3px solid #99E2D0;
+  border-bottom: 3px solid #99e2d0;
 }
 .menu-container .menu .course--2__cards {
   position: relative;
@@ -918,19 +959,27 @@ h3 {
   opacity: 0;
   animation: translate-dish 800ms 200ms ease-in-out both, opak 800ms 900ms both;
 }
-.menu-container .menu .course--2__cards .card--1:hover .card--1__content__dish-price {
+.menu-container
+  .menu
+  .course--2__cards
+  .card--1:hover
+  .card--1__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--2__cards .card--1:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--2__cards .card--1:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--2__cards .card--1:hover .card--1__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--2__cards
+  .card--1:hover
+  .card--1__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -994,19 +1043,27 @@ h3 {
   opacity: 0;
   animation: translate-dish 800ms 600ms ease-in-out both, opak 800ms 1300ms both;
 }
-.menu-container .menu .course--2__cards .card--2:hover .card--2__content__dish-price {
+.menu-container
+  .menu
+  .course--2__cards
+  .card--2:hover
+  .card--2__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--2__cards .card--2:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--2__cards .card--2:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--2__cards .card--2:hover .card--2__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--2__cards
+  .card--2:hover
+  .card--2__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -1068,21 +1125,30 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 1000ms ease-in-out both, opak 800ms 1700ms both;
+  animation: translate-dish 800ms 1000ms ease-in-out both,
+    opak 800ms 1700ms both;
 }
-.menu-container .menu .course--2__cards .card--3:hover .card--3__content__dish-price {
+.menu-container
+  .menu
+  .course--2__cards
+  .card--3:hover
+  .card--3__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--2__cards .card--3:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--2__cards .card--3:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--2__cards .card--3:hover .card--3__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--2__cards
+  .card--3:hover
+  .card--3__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -1144,21 +1210,30 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 1400ms ease-in-out both, opak 800ms 2100ms both;
+  animation: translate-dish 800ms 1400ms ease-in-out both,
+    opak 800ms 2100ms both;
 }
-.menu-container .menu .course--2__cards .card--4:hover .card--4__content__dish-price {
+.menu-container
+  .menu
+  .course--2__cards
+  .card--4:hover
+  .card--4__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--2__cards .card--4:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--2__cards .card--4:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--2__cards .card--4:hover .card--4__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--2__cards
+  .card--4:hover
+  .card--4__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -1230,7 +1305,7 @@ h3 {
 .menu-container .menu .course--3__title-line {
   width: 40px;
   margin-top: 10px;
-  border-bottom: 3px solid #99E2D0;
+  border-bottom: 3px solid #99e2d0;
 }
 .menu-container .menu .course--3__cards {
   position: relative;
@@ -1245,19 +1320,27 @@ h3 {
   opacity: 0;
   animation: translate-dish 800ms 200ms ease-in-out both, opak 800ms 900ms both;
 }
-.menu-container .menu .course--3__cards .card--1:hover .card--1__content__dish-price {
+.menu-container
+  .menu
+  .course--3__cards
+  .card--1:hover
+  .card--1__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--3__cards .card--1:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--3__cards .card--1:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--3__cards .card--1:hover .card--1__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--3__cards
+  .card--1:hover
+  .card--1__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -1321,19 +1404,27 @@ h3 {
   opacity: 0;
   animation: translate-dish 800ms 600ms ease-in-out both, opak 800ms 1300ms both;
 }
-.menu-container .menu .course--3__cards .card--2:hover .card--2__content__dish-price {
+.menu-container
+  .menu
+  .course--3__cards
+  .card--2:hover
+  .card--2__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--3__cards .card--2:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--3__cards .card--2:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--3__cards .card--2:hover .card--2__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--3__cards
+  .card--2:hover
+  .card--2__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -1395,21 +1486,30 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 1000ms ease-in-out both, opak 800ms 1700ms both;
+  animation: translate-dish 800ms 1000ms ease-in-out both,
+    opak 800ms 1700ms both;
 }
-.menu-container .menu .course--3__cards .card--3:hover .card--3__content__dish-price {
+.menu-container
+  .menu
+  .course--3__cards
+  .card--3:hover
+  .card--3__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--3__cards .card--3:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--3__cards .card--3:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--3__cards .card--3:hover .card--3__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--3__cards
+  .card--3:hover
+  .card--3__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -1471,21 +1571,30 @@ h3 {
   margin-top: 12px;
   position: relative;
   opacity: 0;
-  animation: translate-dish 800ms 1400ms ease-in-out both, opak 800ms 2100ms both;
+  animation: translate-dish 800ms 1400ms ease-in-out both,
+    opak 800ms 2100ms both;
 }
-.menu-container .menu .course--3__cards .card--4:hover .card--4__content__dish-price {
+.menu-container
+  .menu
+  .course--3__cards
+  .card--4:hover
+  .card--4__content__dish-price {
   transform: translateX(-59px);
   transition: transform 500ms ease-in-out;
 }
 .menu-container .menu .course--3__cards .card--4:hover .check {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transform: scaleX(1);
   width: 59px;
 }
 .menu-container .menu .course--3__cards .card--4:hover .check__icon {
   transform: rotate(-360deg);
 }
-.menu-container .menu .course--3__cards .card--4:hover .card--4__content__dish-text__subtitle {
+.menu-container
+  .menu
+  .course--3__cards
+  .card--4:hover
+  .card--4__content__dish-text__subtitle {
   width: calc(100% - 65px);
   white-space: nowrap;
   overflow: hidden;
@@ -1577,4 +1686,4 @@ h3 {
   right: 0;
   left: 0;
   box-sizing: border-box;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
