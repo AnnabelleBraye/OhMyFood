@@ -19,16 +19,10 @@
   }
 }
 
-.container {
-  height: 100vw;
-  max-height: 100vw;
-}
-
 .img-restaurant {
   @include width-height(100%, 275px);
   max-width: 100%;
   object-fit: cover;
-  position: relative;
 
   @media (min-width: map-get($breakpoints, large)) {
     height: 383px;
@@ -36,11 +30,10 @@
 }
 
 .menu-container {
-  position: relative;
   width: 100%;
   overflow: hidden;
   background-color: $grey-light-color;
-  top: -58px;
+  margin-top: -58px;
   border-radius: 40px 40px 0 0;
 
   @media (min-width: map-get($breakpoints, large)) {
@@ -211,14 +204,4 @@
   100% {
     opacity: 1;
   }
-}
-
-/* Footer */
-.foot {
-  position: relative;
-  top: -58px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  box-sizing: border-box;
 }

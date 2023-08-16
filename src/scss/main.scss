@@ -1,6 +1,6 @@
 /// Abstracts
-@import "./abstracts/variables";
-@import "./abstracts/mixins";
+@import "./utils/variables";
+@import "./utils/mixins";
 
 /// Base
 @import "./base/base";
@@ -20,3 +20,6 @@
 /// Pages
 @import "./pages/home";
 @import "./pages/restaurant";
+
+/// Vendors
+@import "./vendors/normalize";
