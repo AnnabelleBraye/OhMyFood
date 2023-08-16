@@ -8,7 +8,7 @@
   padding: 22px 25px;
   gap: 16px;
 
-  @media (min-width: map-get($breakpoints, large)) {
+  @media (min-width: map-get($breakpoints, medium)) {
     @include flex(row);
     flex-direction: row-reverse;
     box-sizing: border-box;
@@ -29,7 +29,7 @@
     gap: 7px;
     list-style-type: none;
 
-    @media (min-width: map-get($breakpoints, large)) {
+    @media (min-width: map-get($breakpoints, medium)) {
       @include flex(row);
       gap: 7px;
     }
@@ -49,7 +49,7 @@
   }
 }
 
-@media (min-width: map-get($breakpoints, large)) {
+@media (min-width: map-get($breakpoints, medium)) {
   .footer-li-large {
     display: inline-block;
     width: 168px;

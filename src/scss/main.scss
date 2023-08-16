@@ -1,6 +1,6 @@
 /// Abstracts
-@import "./abstracts/variables";
-@import "./abstracts/mixins";
+@import "./utils/variables";
+@import "./utils/mixins";
 
 /// Base
 @import "./base/base";
@@ -9,7 +9,6 @@
 
 /// Components
 @import "./components/button";
-@import "./components/button-link";
 @import "./components/heart-icon";
 
 /// Layout
