@@ -123,7 +123,7 @@ $show-all-duration: 0ms;
     line-height: 28.13px;
     margin: auto;
 
-    @media (min-width: map-get($breakpoints, large)) {
+    @media (min-width: map-get($breakpoints, medium)) {
       @include width-height(100%, auto);
     }
   }
@@ -134,7 +134,8 @@ $show-all-duration: 0ms;
     margin-bottom: 27px;
     width: 315px;
 
-    @media (min-width: map-get($breakpoints, large)) {
+    @media (min-width: map-get($breakpoints, medium)) {
+      @include width-height(100%, auto);
       margin: 18px auto;
     }
   }
@@ -160,6 +161,10 @@ $show-all-duration: 0ms;
   &__cards {
     margin: 0 20px 0 26px ;
 
+    @media (min-width: map-get($breakpoints, medium)) {
+      @include flex(row);
+      gap: 20px;
+    }
     @media (min-width: map-get($breakpoints, large)) {
       @include flex(row);
       gap: 36px;
@@ -212,12 +217,19 @@ $show-all-duration: 0ms;
   &__cards {
     @include flex(column);
 
+    @media (min-width: map-get($breakpoints, medium)) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 20px;
+      column-gap: 50px;
+    }
+    
     @media (min-width: map-get($breakpoints, large)) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       row-gap: 50px;
       column-gap: 100px;
-    } 
+    }
     
     .card {
       @include shadow-radius(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 15px);

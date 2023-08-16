@@ -34,10 +34,18 @@
   overflow: hidden;
   background-color: $grey-light-color;
   margin-top: -58px;
+  z-index: 2;
+  position: relative;
   border-radius: 40px 40px 0 0;
 
+  @media (min-width: map-get($breakpoints, medium)) {
+    margin: -58px 40px 0 40px;
+    padding: 0 140px;
+    width: auto;
+  }
+
   @media (min-width: map-get($breakpoints, large)) {
-    margin: 0 193px;
+    margin: -58px 193px 0 193px;
     padding: 0 193px;
     width: auto;
   }
@@ -51,7 +59,7 @@
       @include align-and-justify(center, left);
       padding-top: 40px;
       
-      @media (min-width: map-get($breakpoints, large)) {
+      @media (min-width: map-get($breakpoints, medium)) {
         justify-content: center;
       }
 
