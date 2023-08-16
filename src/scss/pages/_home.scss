@@ -4,81 +4,84 @@ $hide-spinner-duration: 0ms;
 $hide-spinner-delay: 2100ms;
 $show-all-duration: 0ms;
 .delayed-container {
-  animation: show-hide $show-all-duration $hide-spinner-delay backwards;
-  z-index: 1;
+  animation: show-hide $show-all-duration $hide-spinner-delay both;
+  position: relative;
 }
 
-.spinner {
-  animation: showhide-content $hide-spinner-duration $hide-spinner-delay forwards;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  z-index: 1;
-  width: 100px;
-  aspect-ratio: 1/1;
-  display: grid;
-  opacity: 0.8;
-}
-
-.spinner::before,
-.spinner::after {
-  content: "";
-  grid-area: 1/1;
-  background: 
-  radial-gradient(
-    closest-side,
-    $primary-color 96%,
-    rgba(255, 0, 0, 0)
-  ) 50% 0%/8px 8px no-repeat, // position x = 0, y = 50%, bg-size x = 0-20%, bg-size y = 80-100%
-  radial-gradient(
-    closest-side,
-    $secondary-color 96%,
-    rgba(0, 0, 255, 0),
-  ) 50% 100%/8px 8px no-repeat,
-  radial-gradient(
-    closest-side,
-    $primary-color 96%,
-    rgba(255, 0, 0, 0)
-  ) 100% 50%/8px 8px no-repeat, // position x = 0, y = 50%, bg-size x = 0-20%, bg-size y = 80-100%
-  radial-gradient(
-    closest-side,
-    $secondary-color 96%,
-    rgba(0, 0, 255, 0),
-  ) 0% 50%/8px 8px no-repeat;    
-  animation: spinner $spinner-duration infinite, showhide-content 0ms 3100ms forwards;
-}
-
-.spinner::before {
-  background-size: 12px 12px;
-  animation-timing-function: linear;
-}
-
-
-@keyframes spinner {
-  100% {
-    transform: rotate(0.5turn);
+.spinner-container {  
+  .spinner {
+    animation: showhide-content $hide-spinner-duration $hide-spinner-delay forwards;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100px;
+    aspect-ratio: 1/1;
+    display: grid;
+    opacity: 0.8;
   }
-}
+  
+  .spinner::before,
+  .spinner::after {
+    content: "";
+    grid-area: 1/1;
+    background: 
+    radial-gradient(
+      closest-side,
+      $primary-color 96%,
+      rgba(255, 0, 0, 0)
+      ) 50% 0%/8px 8px no-repeat, // position x = 0, y = 50%, bg-size x = 0-20%, bg-size y = 80-100%
+      radial-gradient(
+        closest-side,
+        $secondary-color 96%,
+        rgba(0, 0, 255, 0),
+        ) 50% 100%/8px 8px no-repeat,
+        radial-gradient(
+          closest-side,
+          $primary-color 96%,
+          rgba(255, 0, 0, 0)
+          ) 100% 50%/8px 8px no-repeat, // position x = 0, y = 50%, bg-size x = 0-20%, bg-size y = 80-100%
+          radial-gradient(
+            closest-side,
+            $secondary-color 96%,
+            rgba(0, 0, 255, 0),
+            ) 0% 50%/8px 8px no-repeat;    
+            animation: spinner $spinner-duration infinite, showhide-content 0ms 3100ms forwards;
+          }
+          
+  .spinner::before {
+    background-size: 12px 12px;
+    animation-timing-function: linear;
+  }
 
-@keyframes show-hide {
-  0% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
-@keyframes showhide-content {
-  0% {
-    transform: translateX(0);
+  @keyframes spinner {
+    100% {
+      transform: rotate(0.5turn);
+    }
   }
-  100% {
-    transform: translateX(-9999px);
-    z-index: 0;
+
+  @keyframes show-hide {
+    0% {
+      opacity: 0.2;
+      z-index: -1;
+    }
+    100% {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  @keyframes showhide-content {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-9999px);
+      z-index: 0;
+    }
   }
 }
 
@@ -123,7 +126,7 @@ $show-all-duration: 0ms;
     line-height: 28.13px;
     margin: auto;
 
-    @media (min-width: map-get($breakpoints, large)) {
+    @media (min-width: map-get($breakpoints, medium)) {
       @include width-height(100%, auto);
     }
   }
@@ -134,7 +137,8 @@ $show-all-duration: 0ms;
     margin-bottom: 27px;
     width: 315px;
 
-    @media (min-width: map-get($breakpoints, large)) {
+    @media (min-width: map-get($breakpoints, medium)) {
+      @include width-height(100%, auto);
       margin: 18px auto;
     }
   }
@@ -160,6 +164,10 @@ $show-all-duration: 0ms;
   &__cards {
     margin: 0 20px 0 26px ;
 
+    @media (min-width: map-get($breakpoints, medium)) {
+      @include flex(row);
+      gap: 20px;
+    }
     @media (min-width: map-get($breakpoints, large)) {
       @include flex(row);
       gap: 36px;
@@ -212,12 +220,19 @@ $show-all-duration: 0ms;
   &__cards {
     @include flex(column);
 
+    @media (min-width: map-get($breakpoints, medium)) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 20px;
+      column-gap: 50px;
+    }
+    
     @media (min-width: map-get($breakpoints, large)) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       row-gap: 50px;
       column-gap: 100px;
-    } 
+    }
     
     .card {
       @include shadow-radius(0px 4px 15px 0px rgba(0, 0, 0, 0.15), 15px);
