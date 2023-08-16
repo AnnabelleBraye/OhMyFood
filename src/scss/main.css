@@ -103,11 +103,6 @@ h3 {
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.6);
 }
 
-.btn-link {
-  border: none;
-  background-color: inherit;
-}
-
 .heart-container {
   width: 22px;
   height: 22px;
@@ -231,11 +226,11 @@ h3 {
   }
 }
 .delayed-container {
-  animation: show-hide 0ms 2100ms backwards;
-  z-index: 1;
+  animation: show-hide 0ms 2100ms both;
+  position: relative;
 }
 
-.spinner {
+.spinner-container .spinner {
   animation: showhide-content 0ms 2100ms forwards;
   position: fixed;
   top: 0;
@@ -243,26 +238,22 @@ h3 {
   bottom: 0;
   right: 0;
   margin: auto;
-  z-index: 1;
   width: 100px;
   aspect-ratio: 1/1;
   display: grid;
   opacity: 0.8;
 }
-
-.spinner::before,
-.spinner::after {
+.spinner-container .spinner::before,
+.spinner-container .spinner::after {
   content: "";
   grid-area: 1/1;
   background: radial-gradient(closest-side, #9356DC 96%, rgba(255, 0, 0, 0)) 50% 0%/8px 8px no-repeat, radial-gradient(closest-side, #FF79DA 96%, rgba(0, 0, 255, 0)) 50% 100%/8px 8px no-repeat, radial-gradient(closest-side, #9356DC 96%, rgba(255, 0, 0, 0)) 100% 50%/8px 8px no-repeat, radial-gradient(closest-side, #FF79DA 96%, rgba(0, 0, 255, 0)) 0% 50%/8px 8px no-repeat;
-  animation: spinner 1s infinite, showhide-content 0ms 3100ms forwards;
+  animation: spinner 1000ms infinite, showhide-content 0ms 3100ms forwards;
 }
-
-.spinner::before {
+.spinner-container .spinner::before {
   background-size: 12px 12px;
   animation-timing-function: linear;
 }
-
 @keyframes spinner {
   100% {
     transform: rotate(0.5turn);
@@ -271,9 +262,11 @@ h3 {
 @keyframes show-hide {
   0% {
     opacity: 0.2;
+    z-index: -1;
   }
   100% {
     opacity: 1;
+    z-index: 1;
   }
 }
 @keyframes showhide-content {
@@ -285,6 +278,7 @@ h3 {
     z-index: 0;
   }
 }
+
 .location-container {
   display: flex;
   flex-direction: row;
